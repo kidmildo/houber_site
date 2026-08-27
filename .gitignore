@@ -1,0 +1,13 @@
+# OS가 자동으로 만드는 파일
+.DS_Store
+Thumbs.db
+
+# 에디터 설정
+.vscode/
+.idea/
+
+# 배포 서비스가 만드는 임시 폴더
+.netlify/
+.vercel/
+.wrangler/
+node_modules/

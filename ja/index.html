@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<!--
+  ============================================================================
+  ADERS INTERNATIONAL — 일본어 페이지 (日本語版)
+  ----------------------------------------------------------------------------
+  · 이 파일은 한국어 페이지(../index.html)와 구조가 완전히 동일합니다.
+    텍스트만 일본어로 바뀌어 있으므로, 한쪽을 고치면 다른 쪽도 함께 고쳐주세요.
+
+  · 경로 주의: 이 파일은 ja/ 폴더 안에 있으므로
+    CSS·JS·이미지 경로 앞에 반드시 ../ 가 붙습니다.
+
+  · 디자인/동작 수정은 한국어 페이지와 같은 파일을 공유합니다.
+      ../assets/css/style.css
+      ../assets/js/main.js
+  ============================================================================
+-->
+<html lang="ja" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- JavaScript 사용 가능 여부 표시 (한국어 페이지와 동일) -->
+<script>document.documentElement.className = 'js';</script>
+
+<!-- ==========================================================================
+     [수정] 검색엔진 · SNS 공유 정보
+     ========================================================================== -->
+<title>ADERS INTERNATIONAL｜日本での始まりを、最後まで共に</title>
+<meta name="description" content="大阪で不動産・飲食・起業コンサルティング・行政書士・ITをひとつのチームで運営しています。住まい、店舗、会社、ビザまで、日本での始まりを最初から最後まで伴走します。">
+
+<link rel="canonical" href="https://www.aders-international.com/ja/">
+
+<!-- 언어별 페이지 연결 (한국어 페이지와 값이 같아야 합니다) -->
+<link rel="alternate" hreflang="ko" href="https://www.aders-international.com/">
+<link rel="alternate" hreflang="ja" href="https://www.aders-international.com/ja/">
+<link rel="alternate" hreflang="x-default" href="https://www.aders-international.com/">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:site_name" content="ADERS INTERNATIONAL">
+<meta property="og:title" content="ADERS INTERNATIONAL｜日本での始まりを、最後まで共に">
+<meta property="og:description" content="大阪で不動産・飲食・起業コンサルティング・行政書士・ITをひとつのチームで運営しています。">
+<meta property="og:url" content="https://www.aders-international.com/ja/">
+<!-- [수정] 공유용 대표 이미지를 준비하면 아래 주석을 풀어주세요.
+<meta property="og:image" content="https://www.aders-international.com/assets/images/og-image.jpg">
+-->
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- 파비콘 (상위 폴더에 있으므로 ../) -->
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+
+<!-- 웹폰트 (한국어 페이지와 동일) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Shippori+Mincho:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- 공통 스타일 · 스크립트 (상위 폴더의 파일을 함께 사용) -->
+<link rel="stylesheet" href="../assets/css/style.css">
+<script src="../assets/js/main.js" defer></script>
+</head>
+
+<body>
+
+<a class="skip-link" href="#main">本文へスキップ</a>
+
+
+<!-- ==========================================================================
+     ヘッダー
+     ========================================================================== -->
+<header class="site-header">
+
+  <a class="brand" href="#top">
+    <span class="brand__name">ADERS</span>
+    <span class="brand__sub">株式会社エイダス</span>
+  </a>
+
+  <nav class="site-nav" aria-label="メインメニュー">
+    <a class="site-nav__link" href="#top">ホーム</a>
+    <a class="site-nav__link" href="#about">会社概要</a>
+    <a class="site-nav__link" href="#goal">事業目標</a>
+
+    <div class="has-dropdown">
+      <a class="site-nav__link" href="#business">事業内容</a>
+      <div class="dropdown">
+        <ul class="dropdown__list">
+          <li><a class="dropdown__link" href="#biz-houber"><span class="dropdown__num">01</span>HOUBER・不動産</a></li>
+          <li><a class="dropdown__link" href="#biz-nubi"><span class="dropdown__num">02</span>NUBI・レストラン</a></li>
+          <li><a class="dropdown__link" href="#biz-startup"><span class="dropdown__num">03</span>起業コンサルティング</a></li>
+          <li><a class="dropdown__link" href="#biz-legal"><span class="dropdown__num">04</span>行政書士</a></li>
+          <li><a class="dropdown__link" href="#biz-it"><span class="dropdown__num">05</span>IT</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <a class="site-nav__link" href="#contact">お問い合わせ</a>
+
+    <!-- 언어 전환 — 한국어 페이지(상위 폴더)로 이동 -->
+    <a class="site-nav__lang" href="../" lang="ko" hreflang="ko">한국어</a>
+  </nav>
+
+  <button class="menu-toggle" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-menu">
+    <span class="menu-toggle__bar"></span>
+    <span class="menu-toggle__bar"></span>
+  </button>
+
+</header>
+
+
+<!-- ==========================================================================
+     モバイルメニュー
+     ========================================================================== -->
+<nav class="mobile-menu" id="mobile-menu" aria-label="モバイルメニュー">
+  <a class="mobile-menu__link" href="#top">ホーム</a>
+  <a class="mobile-menu__link" href="#about">会社概要</a>
+  <a class="mobile-menu__link" href="#goal">事業目標</a>
+  <a class="mobile-menu__link" href="#business">事業内容</a>
+  <a class="mobile-menu__link" href="#contact">お問い合わせ</a>
+
+  <div class="mobile-menu__footer">
+    <a class="btn btn--primary" href="#contact">お問い合わせ <span class="btn__arrow">&rarr;</span></a>
+    <a class="btn" href="../" lang="ko" hreflang="ko">한국어</a>
+  </div>
+</nav>
+
+
+<main id="main">
+
+  <!-- ========================================================================
+       01. ヒーロー
+       ======================================================================== -->
+  <section class="hero" id="top">
+    <div class="hero__inner">
+
+      <div class="hero__copy">
+        <span class="eyebrow"><span class="eyebrow__num">01</span> — THE WAY</span>
+
+        <h1 class="hero__title">
+          日本での始まりを、<br>
+          <em>最後まで</em>共にします。
+        </h1>
+
+        <p class="hero__text">
+          住まい、店舗、会社、資格、そしてそれを動かす技術。
+          バラバラだった五つの始まりを、大阪のひとつ屋根の下に置きました。
+        </p>
+
+        <a class="btn btn--primary" href="#about">
+          ADERSをご紹介します <span class="btn__arrow">&rarr;</span>
+        </a>
+      </div>
+
+      <!-- 일러스트 (한국어 페이지와 동일) -->
+      <div class="hero__visual" aria-hidden="true">
+        <svg viewBox="0 0 480 400" preserveAspectRatio="xMidYMax slice" role="presentation">
+          <path d="M0 300 Q60 260 130 285 T260 270 T400 290 L480 275 V400 H0 Z" fill="#E7E9EC"/>
+          <path d="M0 335 Q80 305 170 325 T340 315 T480 330 V400 H0 Z" fill="#D3D7DC"/>
+          <rect x="80"  y="200" width="26" height="120" fill="#16324F"/>
+          <rect x="112" y="170" width="20" height="150" fill="#3C566E"/>
+          <rect x="138" y="215" width="30" height="105" fill="#16324F"/>
+          <rect x="300" y="190" width="22" height="130" fill="#3C566E"/>
+          <rect x="328" y="230" width="34" height="90"  fill="#16324F"/>
+          <rect x="368" y="205" width="18" height="115" fill="#8993A0"/>
+          <circle cx="222" cy="185" r="30" fill="#FFFFFF" opacity=".9"/>
+          <g transform="translate(210,300)">
+            <circle cx="12" cy="10" r="10" fill="#16324F"/>
+            <rect x="3"   y="20" width="18" height="34" rx="7" fill="#1A2530"/>
+            <rect x="-6"  y="30" width="10" height="22" rx="4" fill="#3C566E"/>
+            <rect x="20"  y="26" width="10" height="26" rx="4" fill="#5B6672"/>
+            <rect x="6"   y="52" width="6"  height="20" fill="#1A2530"/>
+            <rect x="14"  y="52" width="6"  height="20" fill="#1A2530"/>
+            <rect x="-10" y="46" width="14" height="16" rx="3" fill="#8993A0"/>
+          </g>
+        </svg>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================================================
+       02. 情報バー
+       ⚠️ [필수 수정] 면허번호는 한국어 페이지와 동일한 값을 넣어야 합니다.
+       ======================================================================== -->
+  <div class="info-bar">
+    <div class="info-bar__item">
+      宅地建物取引業免許
+      <b class="info-bar__value is-todo">大阪府知事(○)第○○○○○号 ※要記入</b>
+    </div>
+    <div class="info-bar__item">
+      行政書士登録番号
+      <b class="info-bar__value is-todo">第○○○○○○○号 ※要記入</b>
+    </div>
+    <div class="info-bar__item">
+      所在地
+      <b class="info-bar__value">大阪市西区靱本町 1-7-17 7F</b>
+    </div>
+    <div class="info-bar__item">
+      対応言語
+      <b class="info-bar__value">한국어 · 日本語 · English</b>
+    </div>
+  </div>
+
+
+  <!-- ========================================================================
+       03. 会社概要
+       ======================================================================== -->
+  <section class="section" id="about">
+    <div class="section__inner about__inner">
+
+      <div>
+        <span class="eyebrow reveal"><span class="eyebrow__num">02</span> — ABOUT</span>
+        <h2 class="section__title reveal reveal--1">始まりを、支える理由。</h2>
+
+        <p class="section__lead reveal reveal--2">
+          見知らぬ国での初めての契約書、初めての役所、初めての店。
+          そのすべての瞬間に通訳と書類と判断が必要です。
+          ADERSはその過程を自ら経験した人々が集まってつくった会社です。
+          手続きを分業せず、最初から最後までひとつのチームで伴走します。
+        </p>
+
+        <a class="btn reveal reveal--3" href="#contact">
+          ご相談・お問い合わせ <span class="btn__arrow">&rarr;</span>
+        </a>
+
+        <div class="stat-grid reveal reveal--3">
+          <div class="stat">
+            <div class="stat__number">1,200<span class="stat__unit">名+</span></div>
+            <div class="stat__label">ANNUAL CLIENTS</div>
+            <div class="stat__note">年間契約者</div>
+          </div>
+          <div class="stat">
+            <div class="stat__number">11<span class="stat__unit">名+</span></div>
+            <div class="stat__label">MEMBERS</div>
+            <div class="stat__note">構成員</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 사진 자리 — 교체 예시 (경로 앞 ../ 주의):
+           <img class="photo about__photo reveal reveal--2"
+                src="../assets/images/about-office.jpg"
+                alt="大阪 ADERS オフィス" width="800" height="1000" loading="lazy"> -->
+      <div class="photo-slot about__photo reveal reveal--2">
+        <p class="photo-slot__text">
+          <b>PHOTO</b>
+          大阪オフィス外観または<br>室内ワーキングショット<br>(縦4:5)
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================================================
+       04. 事業目標
+       ======================================================================== -->
+  <section class="section" id="goal">
+    <div class="section__inner">
+
+      <span class="eyebrow reveal"><span class="eyebrow__num">03</span> — GOAL</span>
+      <h2 class="section__title reveal reveal--1">始まりを、広げる目標。</h2>
+
+      <p class="section__lead reveal reveal--2">
+        不動産も飲食業も、いまだ紙と印鑑と対面で動いています。
+        ADERSはその慣行を否定せず、テクノロジーで編み直すことを目標とします。
+      </p>
+
+      <div class="goal-grid">
+
+        <article class="goal-card reveal reveal--1">
+          <div class="goal-card__num">GOAL 01</div>
+          <h3 class="goal-card__title">手続きの統合</h3>
+          <p class="goal-card__text">
+            ビザ・契約・開業がそれぞれ異なる窓口で処理される構造をひとつにまとめます。
+            お客様が同じ説明を五回繰り返さずに済むようにすることが、最初の目標です。
+          </p>
+        </article>
+
+        <article class="goal-card reveal reveal--2">
+          <div class="goal-card__num">GOAL 02</div>
+          <h3 class="goal-card__title">情報の非対称性の解消</h3>
+          <p class="goal-card__text">
+            初期費用、審査基準、所要期間。問い合わせなければ分からなかった情報を先に公開します。
+            知っているだけ良い選択ができると信じています。
+          </p>
+        </article>
+
+        <article class="goal-card reveal reveal--3">
+          <div class="goal-card__num">GOAL 03</div>
+          <h3 class="goal-card__title">事業による証明</h3>
+          <p class="goal-card__text">
+            仲介だけでなく、自ら店を開き運営します。
+            NUBIで得た実務が起業コンサルティングの根拠となり、その経験が再びITツールに整理されます。
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================================
+       05. 事業内容
+       ======================================================================== -->
+  <section class="section" id="business">
+    <div class="section__inner">
+
+      <span class="eyebrow reveal"><span class="eyebrow__num">04</span> — BUSINESS</span>
+      <h2 class="section__title reveal reveal--1">始まりを、かなえる五つの部屋。</h2>
+
+      <p class="section__lead reveal reveal--2">
+        それぞれ異なる事業に見えても、すべて「日本で何かを始める」という
+        ひとつの課題を、異なる角度から解いています。
+      </p>
+
+      <div class="business-grid">
+
+        <!-- ---- 01 HOUBER (不動産) ---- -->
+        <article class="biz-card biz-card--wide reveal reveal--1" id="biz-houber" data-accent="navy">
+          <div class="biz-card__icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 11 12 4l9 7"/><path d="M5 10v9h14v-9"/><path d="M10 19v-6h4v6"/>
+            </svg>
+          </div>
+          <div class="biz-card__index">01・住まい</div>
+          <span class="biz-card__keyword">始まりの家。</span>
+          <h3 class="biz-card__title">HOUBER<span class="biz-card__title-jp">ハウバー</span></h3>
+          <span class="biz-card__category">不動産仲介・賃貸管理・投資コンサルティング</span>
+
+          <div class="photo-slot">
+            <p class="photo-slot__text"><b>PHOTO</b>HOUBER 物件または相談風景</p>
+          </div>
+
+          <p class="biz-card__text">
+            賃貸・売買仲介から契約後の賃貸管理まで。
+            保証会社の審査対応や契約書のご説明を含め、最後まで担当します。
+          </p>
+
+          <div class="biz-card__footer">
+            <a class="biz-card__link" href="https://www.houber-home.com" target="_blank" rel="noopener">
+              HOUBER サイト <span aria-hidden="true">&#8599;</span>
+              <span class="visually-hidden">(新しいウィンドウで開きます)</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- ---- 02 NUBI (レストラン) ---- -->
+        <article class="biz-card biz-card--wide reveal reveal--2" id="biz-nubi" data-accent="blue">
+          <div class="biz-card__icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M6 3v8a2 2 0 0 0 4 0V3"/><path d="M8 11v10"/>
+              <path d="M17 3c-2 0-3 2-3 5s1 4 3 4v9"/>
+            </svg>
+          </div>
+          <div class="biz-card__index">02・食</div>
+          <span class="biz-card__keyword">始まりの味。</span>
+          <h3 class="biz-card__title">NUBI<span class="biz-card__title-jp">ヌビ</span></h3>
+          <span class="biz-card__category">レストラン・飲食店運営</span>
+
+          <div class="photo-slot">
+            <p class="photo-slot__text"><b>PHOTO</b>NUBI 店内または看板メニュー</p>
+          </div>
+
+          <p class="biz-card__text">
+            自ら企画し運営する飲食ブランド。
+            物件選定から内装工事、保健所への届出、メニュー設計まで
+            一度経験したからこそ、次の方に正確にお伝えできます。
+          </p>
+
+          <div class="biz-card__footer">
+            <a class="biz-card__link" href="#contact">詳しくはお問い合わせ <span aria-hidden="true">&rarr;</span></a>
+          </div>
+        </article>
+
+        <!-- ---- 03 起業コンサルティング ---- -->
+        <article class="biz-card reveal reveal--1" id="biz-startup" data-accent="slate">
+          <div class="biz-card__icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 20 12 4l8 16"/><path d="M9 20v-6h6v6"/>
+            </svg>
+          </div>
+          <div class="biz-card__index">03・起業</div>
+          <span class="biz-card__keyword">始まりの事業。</span>
+          <h3 class="biz-card__title">起業コンサルティング</h3>
+          <span class="biz-card__category">法人設立・資金調達・出店</span>
+
+          <p class="biz-card__text">
+            書類代行にとどまらず、実際に開業する瞬間までの手順を共に設計します。
+            事業計画の策定から立地選定まで含みます。
+          </p>
+
+          <div class="biz-card__footer">
+            <a class="biz-card__link" href="#contact">詳しくはお問い合わせ <span aria-hidden="true">&rarr;</span></a>
+          </div>
+        </article>
+
+        <!-- ---- 04 行政書士 ---- -->
+        <article class="biz-card reveal reveal--2" id="biz-legal" data-accent="ink">
+          <div class="biz-card__icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="5" y="3" width="14" height="18" rx="2"/>
+              <path d="M9 8h6M9 12h6M9 16h3"/>
+            </svg>
+          </div>
+          <div class="biz-card__index">04・資格</div>
+          <span class="biz-card__keyword">始まりの資格。</span>
+          <h3 class="biz-card__title">行政書士</h3>
+          <span class="biz-card__category">在留資格・経営管理ビザ・許認可・相続</span>
+
+          <p class="biz-card__text">
+            在留資格の取得・変更、経営管理ビザ、各種許認可や相続手続き。
+            行政書士が直接担当し、日本の規定に沿った書類を最初から正確に準備します。
+          </p>
+
+          <div class="biz-card__footer">
+            <a class="biz-card__link" href="#contact">詳しくはお問い合わせ <span aria-hidden="true">&rarr;</span></a>
+          </div>
+        </article>
+
+        <!-- ---- 05 IT ---- -->
+        <article class="biz-card reveal reveal--3" id="biz-it" data-accent="steel">
+          <div class="biz-card__icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="7" y="7" width="10" height="10" rx="1.5"/>
+              <path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.5 5.5l2.5 2.5M18.5 5.5 16 8M5.5 18.5 8 16M18.5 18.5 16 16"/>
+            </svg>
+          </div>
+          <div class="biz-card__index">05・技術</div>
+          <span class="biz-card__keyword">始まりの技術。</span>
+          <h3 class="biz-card__title">IT<span class="biz-card__title-jp">Proptech</span></h3>
+          <span class="biz-card__category">自社ソリューション開発・データ・自動化</span>
+
+          <p class="biz-card__text">
+            不動産と店舗実務に合わせた自社ソリューションを開発します。
+            資産管理の簡素化、顧客体験の改善、データに基づく意思決定を支援するツールを自ら作り、使っています。
+          </p>
+
+          <div class="biz-card__footer">
+            <a class="biz-card__link" href="#contact">詳しくはお問い合わせ <span aria-hidden="true">&rarr;</span></a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================================
+       06. お問い合わせ
+       ======================================================================== -->
+  <section class="section" id="contact">
+    <div class="section__inner">
+
+      <span class="eyebrow reveal"><span class="eyebrow__num">05</span> — CONTACT</span>
+
+      <h2 class="section__title reveal reveal--1">
+        成功する日本生活の始まりに、<br>ADERSへご相談ください。
+      </h2>
+
+      <p class="section__lead reveal reveal--2">
+        住まい、お店、起業、ビザ。何から始めればいいか分からなくても大丈夫です。
+        状況を教えていただければ、手順を一緒に整理します。
+      </p>
+
+      <div class="contact-channels reveal reveal--3">
+        <a class="btn btn--primary" href="mailto:property@aders-international.com">
+          メールでお問い合わせ <span class="btn__arrow">&rarr;</span>
+        </a>
+
+        <a class="btn" href="#">カカオトーク相談 <span class="btn__tag">KAKAO</span></a>
+        <a class="btn" href="#">LINE相談 <span class="btn__tag">LINE</span></a>
+
+        <a class="btn" href="tel:+81666550328">06-6655-0328 <span class="btn__tag">不動産</span></a>
+        <a class="btn" href="tel:+81666550318">06-6655-0318 <span class="btn__tag">行政書士</span></a>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+
+<!-- ==========================================================================
+     フッター
+     ========================================================================== -->
+<footer class="site-footer">
+  <div class="footer-grid">
+
+    <div>
+      <div class="footer__brand">ADERS</div>
+      <address class="footer__address">
+        株式会社エイダス / ADERS International<br>
+        〒550-0004 大阪市西区靱本町1-7-17 7F<br>
+        TEL <a href="tel:+81666550328">06-6655-0328</a> · FAX 06-6655-0329<br>
+        <a href="mailto:property@aders-international.com">property@aders-international.com</a>
+      </address>
+
+      <!-- ⚠️ [필수 수정] 실제 번호 입력 후 <em> 태그를 지우세요. -->
+      <div class="footer__license">
+        宅地建物取引業免許 <em>※要記入</em><br>
+        行政書士登録番号 <em>※要記入</em><br>
+        法人番号 <em>※要記入</em>
+      </div>
+    </div>
+
+    <div>
+      <h2 class="footer__heading">MENU</h2>
+      <ul class="footer__list">
+        <li><a href="#top">ホーム</a></li>
+        <li><a href="#about">会社概要</a></li>
+        <li><a href="#goal">事業目標</a></li>
+        <li><a href="#business">事業内容</a></li>
+        <li><a href="#contact">お問い合わせ</a></li>
+        <li><a href="../" lang="ko" hreflang="ko">한국어</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h2 class="footer__heading">BUSINESS</h2>
+      <ul class="footer__list">
+        <li><a href="#biz-houber">HOUBER・不動産</a></li>
+        <li><a href="#biz-nubi">NUBI・レストラン</a></li>
+        <li><a href="#biz-startup">起業コンサルティング</a></li>
+        <li><a href="#biz-legal">行政書士</a></li>
+        <li><a href="#biz-it">IT・Proptech</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <span>&copy; 2026 ADERS INTERNATIONAL</span>
+    <span>
+      <a href="#">プライバシーポリシー</a>
+      <a href="#">特定商取引法に基づく表記</a>
+    </span>
+  </div>
+</footer>
+
+</body>
+</html>

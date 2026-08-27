@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ADERS 파비콘 (브라우저 탭 아이콘)
+     색을 바꾸려면 아래 fill 값을 style.css 의 --color-navy 와 맞춰주세요. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <rect width="64" height="64" rx="12" fill="#16324F"/>
+  <path d="M32 16 L46 48 H38.5 L35.6 40.5 H28.4 L25.5 48 H18 Z M32 27.5 L29.9 34.5 H34.1 Z"
+        fill="#FFFFFF"/>
+</svg>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!--
+  ============================================================================
+  404 — 페이지를 찾을 수 없을 때 보여줄 화면
+  ----------------------------------------------------------------------------
+  Netlify / Vercel / Cloudflare Pages / GitHub Pages 모두
+  루트에 404.html 이 있으면 자동으로 이 페이지를 사용합니다.
+  (별도 설정 불필요)
+  ============================================================================
+-->
+<html lang="ko" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>페이지를 찾을 수 없습니다｜ADERS INTERNATIONAL</title>
+
+<!-- 오류 페이지는 검색결과에 나오지 않도록 합니다 -->
+<meta name="robots" content="noindex">
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=IBM+Plex+Sans+KR:wght@300;400;500&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+
+<style>
+  /* 이 페이지에서만 쓰는 간단한 가운데 정렬 레이아웃 */
+  .error-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100svh;
+    padding: 40px var(--gutter);
+    text-align: center;
+    background: linear-gradient(180deg, #FAFBFC 0%, var(--color-bg) 60%, var(--color-bg-soft) 100%);
+  }
+  .error-page__code {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.3em;
+    color: var(--color-text-mute);
+  }
+  .error-page__title {
+    margin: 20px 0 16px;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(28px, 5vw, 44px);
+    line-height: 1.4;
+    color: var(--color-navy);
+  }
+  .error-page__text {
+    margin: 0 0 36px;
+    max-width: 42ch;
+    font-size: 14px;
+    color: var(--color-text-soft);
+  }
+  .error-page__actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+</style>
+</head>
+
+<body>
+  <main class="error-page">
+    <span class="error-page__code">404 — NOT FOUND</span>
+
+    <h1 class="error-page__title">
+      찾으시는 페이지가<br>존재하지 않습니다.
+    </h1>
+
+    <p class="error-page__text">
+      주소가 바뀌었거나 삭제된 페이지일 수 있습니다.<br>
+      아래 버튼으로 이동해 주세요.
+    </p>
+
+    <div class="error-page__actions">
+      <a class="btn btn--primary" href="/">홈으로 돌아가기 <span class="btn__arrow">&rarr;</span></a>
+      <a class="btn" href="/#contact">문의하기</a>
+      <a class="btn" href="/ja/" lang="ja" hreflang="ja">日本語</a>
+    </div>
+  </main>
+</body>
+</html>
