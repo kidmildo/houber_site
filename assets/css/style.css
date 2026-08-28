@@ -24,6 +24,7 @@
    16. 스크롤 등장 애니메이션 (.reveal)
    17. 반응형 (태블릿·모바일)
    18. 인쇄 / 모션 최소화 설정
+   19. 사업 상세 페이지 (business/*.html)
    ========================================================================== */
 
 
@@ -886,6 +887,53 @@ img {
   gap: 12px;
 }
 
+/* 카드 안 핵심 포인트 목록 — 자세한 설명은 상세 페이지에서 보여줍니다.
+   항목은 3~4개가 적당합니다. 더 늘리면 카드 높이가 들쭉날쭉해집니다. */
+.biz-card__points {
+  margin: 0 0 20px;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 7px;
+}
+.biz-card__points li {
+  position: relative;
+  padding-left: 15px;
+  font-size: 12.4px;
+  line-height: 1.6;
+  color: var(--color-text-soft);
+}
+/* 항목 앞의 작은 점 — 카드 강조색(--accent)을 씁니다. */
+.biz-card__points li::before {
+  content: "";
+  position: absolute;
+  top: 0.72em;
+  left: 2px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+/* 카드 하단 "자세히 보기" 버튼 — 상세 페이지로 이동합니다. */
+.biz-card__more {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 16px;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  font-size: 11.5px;
+  letter-spacing: 0.02em;
+  color: var(--accent);
+  transition: background 0.35s var(--ease), color 0.35s var(--ease), gap 0.35s var(--ease);
+}
+.biz-card__more:hover {
+  gap: 12px;
+  background: var(--accent);
+  color: #fff;
+}
+
 
 /* ==========================================================================
    14. 문의하기 (#contact)
@@ -1081,4 +1129,441 @@ html:not(.js) .reveal {
   body { background: #fff; color: #000; }
   .hero { min-height: auto; padding-top: 40px; }
   .section { page-break-inside: avoid; }
+}
+
+
+/* ==========================================================================
+   19. 사업 상세 페이지 (business/*.html · ja/business/*.html)
+   --------------------------------------------------------------------------
+   메인 페이지의 사업 카드에서 "자세히 보기"를 누르면 열리는 페이지입니다.
+   10개 페이지(한국어 5 · 일본어 5)가 이 블록 하나를 함께 사용합니다.
+
+   구성 순서
+     .detail-hero      머리 — 번호 · 제목 · 요약 · 키워드
+     .detail-section   본문 섹션 (--soft 를 붙이면 옅은 회색 배경)
+     .detail-item      번호가 붙은 세부 항목 (01, 02, 03 …)
+     .detail-approach  마무리 — 네이비 배경
+     .detail-cta       문의 유도
+     .detail-nav       이전 / 다음 사업
+   ========================================================================== */
+
+/* --- 머리 --------------------------------------------------------------- */
+.detail-hero {
+  padding: 150px var(--gutter) 70px;   /* 위쪽은 고정 헤더에 가리지 않도록 넉넉히 */
+  background: linear-gradient(180deg, #F7F8F9 0%, var(--color-bg) 100%);
+  border-bottom: 1px solid var(--color-border);
+}
+.detail-hero__inner {
+  width: 100%;
+  max-width: var(--wrap);
+  margin: 0 auto;
+}
+
+/* 사업별 강조색 — HTML의 data-accent 값으로 정해집니다. (카드와 같은 값) */
+.detail-hero[data-accent="navy"]  { --accent: var(--color-navy); }
+.detail-hero[data-accent="blue"]  { --accent: var(--color-blue); }
+.detail-hero[data-accent="slate"] { --accent: var(--color-slate); }
+.detail-hero[data-accent="ink"]   { --accent: var(--color-text); }
+.detail-hero[data-accent="steel"] { --accent: var(--color-steel); }
+
+/* 현재 위치 표시 (HOME / 사업내용 / 부동산) */
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 34px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--color-text-mute);
+}
+.breadcrumb a { transition: color 0.3s var(--ease); }
+.breadcrumb a:hover { color: var(--color-navy); }
+.breadcrumb [aria-current="page"] { color: var(--color-text); }
+
+/* 제목 위 원형 아이콘 — 사업 카드와 같은 모양입니다. */
+.detail-hero__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  margin-bottom: 22px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--accent) 16%, var(--color-bg));
+}
+.detail-hero__icon svg {
+  width: 26px;
+  height: 26px;
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.detail-hero__title {
+  margin: 14px 0 24px;
+  max-width: 880px;
+  word-break: keep-all;   /* 한국어가 단어 중간에서 잘리지 않도록 */
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(30px, 4vw, 52px);
+  line-height: 1.32;
+  color: var(--color-navy);
+}
+/* 제목 옆 일본어 표기 (예: 行政書士) */
+.detail-hero__jp {
+  margin-left: 10px;
+  font-family: "Shippori Mincho", serif;
+  font-weight: 500;
+  font-size: 0.45em;
+  letter-spacing: 0.08em;
+  color: var(--color-text-mute);
+}
+.detail-hero__lead {
+  margin: 0 0 32px;
+  max-width: 62ch;
+  font-size: 15px;
+  line-height: 1.95;
+  color: var(--color-text-soft);
+}
+.detail-hero__photo { margin-top: 40px; }
+
+/* 키워드 칩 */
+.detail-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.detail-tags li {
+  padding: 7px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: var(--color-surface);
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.06em;
+  color: var(--color-text-soft);
+}
+
+
+/* --- 본문 섹션 ---------------------------------------------------------- */
+.detail-section {
+  padding: 96px var(--gutter);
+}
+/* 옅은 회색 배경 — 섹션이 이어질 때 번갈아 붙입니다. */
+.detail-section--soft { background: var(--color-bg-soft); }
+
+.detail-section__inner {
+  width: 100%;
+  max-width: var(--wrap);   /* 머리(.detail-hero)와 좌우 위치를 맞춥니다 */
+  margin: 0 auto;
+}
+
+/* 글은 읽기 편한 길이로 제한합니다. (섹션 자체는 넓게 두고 안쪽 글만 좁힘)
+   더 넓게 쓰고 싶으면 아래 880px 만 바꾸면 됩니다. */
+.detail-body,
+.detail-list,
+.detail-block__title,
+.detail-approach__title { max-width: 880px; }
+
+.detail-block__title {
+  margin: 16px 0 40px;
+  word-break: keep-all;   /* 한국어가 단어 중간에서 잘리지 않도록 */
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(22px, 2.6vw, 32px);
+  line-height: 1.4;
+  color: var(--color-navy);
+}
+
+/* 본문 글 묶음 */
+.detail-body p {
+  margin: 0 0 20px;
+  font-size: 14px;
+  line-height: 2.05;
+  color: var(--color-text-soft);
+}
+.detail-body p:last-child { margin-bottom: 0; }
+
+/* 개요 문단은 조금 크게 */
+.detail-body--lead p {
+  font-size: 15.5px;
+  line-height: 2.1;
+  color: var(--color-text);
+}
+
+/* 점 목록 */
+.detail-points {
+  margin: 0 0 24px;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 10px;
+}
+.detail-points li {
+  position: relative;
+  padding-left: 20px;
+  font-size: 14px;
+  line-height: 1.85;
+  color: var(--color-text-soft);
+}
+.detail-points li::before {
+  content: "";
+  position: absolute;
+  top: 0.78em;
+  left: 3px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--color-navy);
+}
+
+/* 짧은 문장을 한 줄씩 강조해서 보여주는 블록
+   (예: "무엇을 제공할 것인가. / 어떤 공간에서 경험하게 할 것인가.") */
+.detail-lines {
+  margin: 0 0 24px;
+  padding-left: 20px;
+  border-left: 2px solid var(--color-navy);
+}
+.detail-lines span {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 16px;
+  line-height: 1.85;
+  color: var(--color-navy);
+}
+
+/* 진행 순서 (물건 탐색 → 신청 → 심사 …) */
+.detail-flow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 30px;      /* 가로 간격 30px = 화살표가 들어갈 자리 */
+  margin: 0 0 26px;
+  padding: 0;
+  list-style: none;
+}
+.detail-flow li {
+  position: relative;
+  padding: 8px 15px;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: var(--color-surface);
+  font-size: 12.5px;
+  color: var(--color-text);
+}
+/* 항목 사이 화살표 — 알약 바깥(간격 안)에 놓습니다.
+   마지막 항목 뒤에는 붙지 않습니다. */
+.detail-flow li:not(:last-child)::after {
+  content: "\2192";
+  position: absolute;
+  top: 50%;
+  right: -22px;
+  transform: translateY(-50%);
+  font-size: 12px;
+  color: var(--color-text-mute);
+}
+
+/* 한 줄 표어 (Brokerage × Screening × Management 등) */
+.detail-motto {
+  margin: 34px 0 18px !important;
+  font-family: var(--font-mono) !important;
+  font-size: 13px !important;
+  letter-spacing: 0.12em;
+  color: var(--color-navy) !important;
+}
+/* 한국어·일본어 문장으로 된 표어 (영문 표어와 달리 명조체를 씁니다) */
+.detail-motto--text {
+  font-family: var(--font-display) !important;
+  font-size: 17px !important;
+  letter-spacing: 0;
+}
+
+/* 마무리 문장 */
+.detail-close {
+  margin: 0 !important;
+  font-family: var(--font-display);
+  font-size: 17px !important;
+  line-height: 1.85 !important;
+  color: var(--color-navy) !important;
+}
+/* 자격·등록번호 같은 사실 정보 */
+.detail-note {
+  margin: 28px 0 0 !important;
+  padding: 14px 18px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-soft);
+  background: var(--color-bg-soft);
+  font-family: var(--font-mono) !important;
+  font-size: 11.5px !important;
+  letter-spacing: 0.04em;
+  color: var(--color-text) !important;
+}
+
+
+/* --- 번호가 붙은 세부 항목 ---------------------------------------------- */
+.detail-list {
+  display: grid;
+  gap: 22px;
+}
+.detail-item {
+  display: grid;
+  grid-template-columns: 74px 1fr;   /* 왼쪽 번호 · 오른쪽 본문 */
+  gap: 10px;
+  padding: 32px 34px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  background: var(--color-surface);
+}
+.detail-item__num {
+  font-family: var(--font-mono);
+  font-size: 22px;
+  line-height: 1.2;
+  color: var(--color-bg-mute);
+}
+.detail-item__title {
+  margin: 0 0 6px;
+  word-break: keep-all;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(19px, 2vw, 23px);
+  line-height: 1.4;
+  color: var(--color-navy);
+}
+.detail-item__sub {
+  margin: 0 0 18px !important;
+  font-size: 13px !important;
+  color: var(--color-text-mute) !important;
+}
+.detail-item__body p {
+  margin: 0 0 16px;
+  font-size: 13.8px;
+  line-height: 2;
+  color: var(--color-text-soft);
+}
+.detail-item__body p:last-child { margin-bottom: 0; }
+.detail-item__body .detail-lines span { font-size: 15px; }
+
+
+/* --- 마무리 (네이비 배경) ------------------------------------------------ */
+.detail-approach {
+  background: var(--color-navy);
+  color: #fff;
+}
+.detail-approach .eyebrow { color: rgba(255, 255, 255, 0.55); }
+.detail-approach__title {
+  margin: 16px 0 34px;
+  word-break: keep-all;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(24px, 3vw, 36px);
+  line-height: 1.4;
+  color: #fff;
+}
+.detail-approach .detail-body p { color: rgba(255, 255, 255, 0.78); }
+.detail-approach .detail-flow li {
+  border-color: rgba(255, 255, 255, 0.28);
+  background: transparent;
+  color: #fff;
+}
+.detail-approach .detail-flow li:not(:last-child)::after { color: rgba(255, 255, 255, 0.5); }
+.detail-approach .detail-lines { border-left-color: rgba(255, 255, 255, 0.4); }
+.detail-approach .detail-lines span { color: #fff; }
+.detail-approach .detail-points li { color: rgba(255, 255, 255, 0.78); }
+.detail-approach .detail-points li::before { background: rgba(255, 255, 255, 0.6); }
+.detail-approach .detail-motto { color: rgba(255, 255, 255, 0.72) !important; }
+.detail-approach .detail-close { color: #fff !important; }
+
+
+/* --- 문의 유도 ---------------------------------------------------------- */
+.detail-cta {
+  border-top: 1px solid var(--color-border);
+  text-align: center;
+}
+.detail-cta__title {
+  margin: 0 0 18px;
+  max-width: none;
+  word-break: keep-all;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(22px, 2.8vw, 34px);
+  line-height: 1.4;
+  color: var(--color-navy);
+}
+.detail-cta__lead {
+  margin: 0 auto 34px;
+  max-width: 52ch;
+  font-size: 14px;
+  color: var(--color-text-soft);
+}
+.detail-cta .contact-channels { justify-content: center; }
+
+
+/* --- 이전 / 다음 사업 --------------------------------------------------- */
+.detail-nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 1px solid var(--color-border);
+}
+.detail-nav__item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 34px var(--gutter);
+  transition: background 0.35s var(--ease);
+}
+.detail-nav__item:hover { background: var(--color-bg-soft); }
+.detail-nav__item--next {
+  align-items: flex-end;
+  text-align: right;
+  border-left: 1px solid var(--color-border);
+}
+.detail-nav__label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--color-text-mute);
+}
+.detail-nav__title {
+  font-family: var(--font-display);
+  font-size: 17px;
+  color: var(--color-navy);
+}
+
+
+/* --- 상세 페이지 반응형 -------------------------------------------------- */
+@media (max-width: 760px) {
+  .detail-hero    { padding: 120px var(--gutter) 54px; }
+  .detail-section { padding: 68px var(--gutter); }
+
+  /* 번호를 본문 위로 올려 한 줄짜리 배치로 바꿉니다 */
+  .detail-item {
+    grid-template-columns: 1fr;
+    gap: 4px;
+    padding: 26px 22px;
+  }
+  .detail-item__num { font-size: 18px; }
+
+  .detail-nav { grid-template-columns: 1fr; }
+  .detail-nav__item--next {
+    align-items: flex-start;
+    text-align: left;
+    border-left: 0;
+    border-top: 1px solid var(--color-border);
+  }
+}
+
+/* 인쇄할 때는 네이비 배경을 흰 바탕으로 되돌립니다. */
+@media print {
+  .detail-approach { background: #fff; color: #000; }
+  .detail-approach .detail-approach__title,
+  .detail-approach .detail-body p,
+  .detail-approach .detail-close { color: #000 !important; }
+  .detail-nav { display: none; }
 }

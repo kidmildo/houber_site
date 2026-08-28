@@ -13,8 +13,20 @@
 ```
 /                           ← 저장소 루트가 곧 사이트 루트입니다
 ├── index.html              ← 한국어 메인 페이지
+├── business/               ← 한국어 사업 상세 페이지 5장
+│   ├── houber.html         ←   01 부동산
+│   ├── nubi.html           ←   02 요식업
+│   ├── startup.html        ←   03 창업 컨설팅
+│   ├── legal.html          ←   04 행정서사
+│   └── it.html             ←   05 IT & Digital
 ├── ja/
-│   └── index.html          ← 일본어 메인 페이지
+│   ├── index.html          ← 일본어 메인 페이지
+│   └── business/           ← 일본어 사업 상세 페이지 5장 (파일명이 위와 같습니다)
+│       ├── houber.html
+│       ├── nubi.html
+│       ├── startup.html
+│       ├── legal.html
+│       └── it.html
 ├── assets/
 │   ├── css/
 │   │   └── style.css       ← 디자인 전체 (두 언어가 함께 사용)
@@ -59,6 +71,7 @@ npx serve .
 
 - 한국어 → http://localhost:8000/
 - 일본어 → http://localhost:8000/ja/
+- 사업 상세(예) → http://localhost:8000/business/houber.html
 
 ---
 
@@ -118,6 +131,45 @@ HTML 파일 안에서 `[수정]` 이라고 적힌 주석을 찾으면 됩니다.
 카드 강조색은 `data-accent` 속성으로 지정합니다.
 사용 가능한 값: `navy` / `blue` / `slate` / `ink` / `steel`
 
+### 3-6. 사업 상세 페이지 고치기
+
+메인 페이지의 카드에는 **핵심 포인트만** 두고,
+자세한 설명은 `business/` 폴더의 상세 페이지에서 보여줍니다.
+
+| 보이는 곳 | 파일 |
+| --- | --- |
+| 카드 한 줄 요약 | `index.html` 의 `biz-card__text` |
+| 카드 핵심 포인트 | `index.html` 의 `biz-card__points` (3~4개 권장) |
+| 카드의 "자세히 보기" 버튼 | `index.html` 의 `biz-card__more` |
+| 상세 설명 전체 | `business/<이름>.html` |
+
+상세 페이지는 아래 조각들을 위에서 아래로 쌓은 구조입니다.
+필요 없는 조각은 통째로 지워도 레이아웃이 깨지지 않습니다.
+
+| 클래스 | 역할 |
+| --- | --- |
+| `.detail-hero` | 머리 — 번호·제목·요약·키워드(`.detail-tags`) |
+| `.detail-section` | 본문 한 덩어리. `--soft` 를 붙이면 옅은 회색 배경 |
+| `.detail-item` | 번호(01, 02 …)가 붙은 세부 항목 |
+| `.detail-points` | 점 목록 |
+| `.detail-lines` | 짧은 문장을 한 줄씩 강조 (왼쪽 세로선) |
+| `.detail-flow` | 진행 순서 (신청 → 심사 → 계약 …) |
+| `.detail-motto` | 영문 한 줄 표어. 한국어·일본어 문장이면 `detail-motto--text` 를 같이 붙이세요 |
+| `.detail-note` | 등록번호 같은 사실 정보 상자 |
+| `.detail-approach` | 마무리 — 네이비 배경 |
+| `.detail-nav` | 맨 아래 이전/다음 사업 링크 |
+
+> **사업을 새로 추가할 때 손봐야 하는 곳 (총 6군데)**
+> 1. `business/새이름.html` 과 `ja/business/새이름.html` 을 만듭니다
+>    (기존 파일을 복사해서 글만 바꾸는 것이 가장 안전합니다)
+> 2. 두 메인 페이지의 카드(`business-grid`)
+> 3. 두 메인 페이지의 헤더 드롭다운
+> 4. 두 메인 페이지의 푸터 `BUSINESS` 목록
+> 5. 상세 페이지 10장의 헤더 드롭다운·푸터 목록·이전/다음 링크
+> 6. `sitemap.xml`
+
+디자인은 `assets/css/style.css` 의 **"19. 사업 상세 페이지"** 한 곳에서만 관리합니다.
+
 ---
 
 ## 4. ⚠️ 배포 전 반드시 처리할 것
@@ -130,36 +182,44 @@ HTML 파일 안에서 `[수정]` 이라고 적힌 주석을 찾으면 됩니다.
       → `index.html` / `ja/index.html` 의 `info-bar` 와 푸터 `footer__license` 에 반영됨.
       담당 공인중개사가 바뀌면 푸터의 번호와 이름을 함께 갱신하세요.
 
-- [ ] **2. 행정서사 등록번호 · 법인번호 입력**  ← 번호 확보 후
-      번호를 아직 받지 못해 **현재 화면에는 표시하지 않고 있습니다.**
-      (미입력 상태를 방문자에게 노출하지 않기 위해 항목 자체를 뺀 상태)
+- [x] ~~**2. 행정서사 회원번호 입력**~~ ✅ 완료
+      `大阪行政書士会 会員番号008980`
+      → 모든 페이지의 푸터 `footer__license` 와
+        `business/legal.html` / `ja/business/legal.html` 의 `detail-note` 에 반영됨.
 
-      번호를 확보하면 `index.html` / `ja/index.html` 의 푸터 `footer__license` 에
-      한 줄씩 추가하세요. 각 파일의 주석에 추가 방법이 적혀 있습니다.
+- [ ] **3. 법인번호(法人番号) 입력**  ← 번호 확보 후
+      아직 넣지 않았습니다. (미입력 상태를 방문자에게 보이지 않기 위해 항목 자체를 뺀 상태)
+      번호를 확보하면 각 페이지 푸터의 `footer__license` 에 한 줄씩 추가하세요.
 
-      > 행정서사 업무를 사이트에서 안내하고 있으므로,
-      > 등록번호는 확보하는 대로 게시하는 것이 안전합니다.
+      > 면허·등록 정보는 **메인 2장 + 상세 10장, 총 12곳**에 있습니다.
+      > 한 곳만 고치면 값이 어긋나므로 반드시 전부 함께 갱신하세요.
 
-- [ ] **3. 도메인 주소 교체**
-      아래 4개 파일에 `https://www.aders-international.com` 이 들어 있습니다.
+- [ ] **4. 도메인 주소 교체**
+      아래 파일들에 `https://www.aders-international.com` 이 들어 있습니다.
       실제 배포 주소가 다르면 전부 바꿔주세요.
-      - `index.html` (canonical, hreflang, og:url)
-      - `ja/index.html` (동일)
+      - `index.html` / `ja/index.html` (canonical, hreflang, og:url)
+      - `business/*.html` / `ja/business/*.html` (10장, 동일)
       - `robots.txt` (Sitemap 주소)
       - `sitemap.xml` (모든 `<loc>`, `<xhtml:link>`)
 
-- [ ] **4. 카카오톡 · LINE 상담 링크 연결**
-      현재 `href="#"` 로 비어 있습니다. (`#contact` 섹션)
+      ```bash
+      # 한 번에 바꾸는 예 (macOS)
+      grep -rl "www.aders-international.com" . --include="*.html" --include="*.xml" --include="*.txt" \
+        | xargs sed -i '' 's|www.aders-international.com|새주소.com|g'
+      ```
 
-- [ ] **5. 개인정보처리방침 · 特定商取引法に基づく表記 페이지 작성**
+- [ ] **5. 카카오톡 · LINE 상담 링크 연결**
+      현재 `href="#"` 로 비어 있습니다. (메인 페이지 `#contact` 섹션)
+
+- [ ] **6. 개인정보처리방침 · 特定商取引法に基づく表記 페이지 작성**
       푸터 하단 링크가 `href="#"` 로 비어 있습니다.
       일본에서 사업을 하는 경우 특정상거래법 표기는 필수입니다.
 
-- [ ] **6. 숫자 지표 근거 확인**
+- [ ] **7. 숫자 지표 근거 확인**
       "연간 계약자 1,200명+" 등의 수치가 실제와 맞는지 확인해 주세요.
       근거를 댈 수 없는 수치는 삭제하는 편이 안전합니다.
 
-- [ ] **7. SNS 공유 이미지(og-image.jpg) 준비**
+- [ ] **8. SNS 공유 이미지(og-image.jpg) 준비**
       1200 × 630 px. 준비되면 두 HTML 의 `og:image` 주석을 풀어주세요.
 
 ---

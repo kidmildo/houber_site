@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<!--
+  ============================================================================
+  ADERS INTERNATIONAL — 사업 상세 페이지 (05. IT &amp; DIGITAL) / 日本語 / 일본어
+  ----------------------------------------------------------------------------
+  · 이 파일은 business/ 폴더 안에 있으므로 CSS·JS 경로 앞에 ../../ 가 붙습니다.
+  · 디자인은 공통 스타일시트의 "19. 사업 상세 페이지" 항목에서 관리합니다.
+  · 같은 내용의 반대 언어 페이지 → ../../business/it.html
+    (한쪽을 고치면 다른 쪽도 함께 고쳐주세요)
+  ============================================================================
+-->
+<html lang="ja" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.className = 'js';</script>
+
+<!-- [수정] 실제 도메인이 다르면 canonical / alternate / og:url 을 모두 바꿔주세요. -->
+<title>IT &amp; Digital｜不動産と暮らしをもっと便利にする技術 — ADERS INTERNATIONAL</title>
+<meta name="description" content="不動産取引のデジタル化、日本での暮らしのためのデジタルサービス、社内業務へのAI活用まで。既存事業の無駄な過程を減らすことがエイダスのデジタル戦略です。">
+
+<link rel="canonical" href="https://www.aders-international.com/ja/business/it.html">
+<link rel="alternate" hreflang="ko" href="https://www.aders-international.com/business/it.html">
+<link rel="alternate" hreflang="ja" href="https://www.aders-international.com/ja/business/it.html">
+<link rel="alternate" hreflang="x-default" href="https://www.aders-international.com/business/it.html">
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:site_name" content="ADERS INTERNATIONAL">
+<meta property="og:title" content="IT &amp; Digital｜不動産と暮らしをもっと便利にする技術 — ADERS INTERNATIONAL">
+<meta property="og:description" content="不動産取引のデジタル化、日本での暮らしのためのデジタルサービス、社内業務へのAI活用まで。既存事業の無駄な過程を減らすことがエイダスのデジタル戦略です。">
+<meta property="og:url" content="https://www.aders-international.com/ja/business/it.html">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Shippori+Mincho:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- 메인 페이지와 같은 스타일·스크립트를 함께 사용합니다 -->
+<link rel="stylesheet" href="../../assets/css/style.css">
+<script src="../../assets/js/main.js" defer></script>
+</head>
+
+<body>
+
+<a class="skip-link" href="#main">本文へスキップ</a>
+
+
+<!-- ==========================================================================
+     헤더 — 메인 페이지와 동일하되, 링크가 상위 폴더를 가리킵니다.
+     ========================================================================== -->
+<header class="site-header">
+
+  <a class="brand" href="../index.html">
+    <span class="brand__name">ADERS</span>
+    <span class="brand__sub">株式会社エイダス</span>
+  </a>
+
+  <nav class="site-nav" aria-label="メインメニュー">
+    <a class="site-nav__link" href="../index.html">ホーム</a>
+    <a class="site-nav__link" href="../index.html#about">会社概要</a>
+    <a class="site-nav__link" href="../index.html#goal">事業目標</a>
+
+    <div class="has-dropdown">
+      <a class="site-nav__link" href="../index.html#business">事業内容</a>
+      <div class="dropdown">
+        <ul class="dropdown__list">
+          <li><a class="dropdown__link" href="houber.html"><span class="dropdown__num">01</span>HOUBER・不動産</a></li>
+          <li><a class="dropdown__link" href="nubi.html"><span class="dropdown__num">02</span>NUBI・レストラン</a></li>
+          <li><a class="dropdown__link" href="startup.html"><span class="dropdown__num">03</span>起業コンサルティング</a></li>
+          <li><a class="dropdown__link" href="legal.html"><span class="dropdown__num">04</span>行政書士</a></li>
+          <li><a class="dropdown__link" href="it.html"><span class="dropdown__num">05</span>IT・Proptech</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <a class="site-nav__link" href="../index.html#contact">お問い合わせ</a>
+    <a class="site-nav__lang" href="../../business/it.html" lang="ko" hreflang="ko">한국어</a>
+  </nav>
+
+  <button class="menu-toggle" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-menu">
+    <span class="menu-toggle__bar"></span>
+    <span class="menu-toggle__bar"></span>
+  </button>
+
+</header>
+
+
+<!-- 모바일 메뉴 -->
+<nav class="mobile-menu" id="mobile-menu" aria-label="モバイルメニュー">
+  <a class="mobile-menu__link" href="../index.html">ホーム</a>
+  <a class="mobile-menu__link" href="../index.html#about">会社概要</a>
+  <a class="mobile-menu__link" href="../index.html#goal">事業目標</a>
+  <a class="mobile-menu__link" href="../index.html#business">事業内容</a>
+  <a class="mobile-menu__link" href="../index.html#contact">お問い合わせ</a>
+
+  <div class="mobile-menu__footer">
+    <a class="btn btn--primary" href="../index.html#contact">お問い合わせ <span class="btn__arrow">&rarr;</span></a>
+    <a class="btn" href="../../business/it.html" lang="ko" hreflang="ko">한국어</a>
+  </div>
+</nav>
+
+
+<main id="main">
+
+  <!-- ========================================================================
+       페이지 머리 — 번호 · 제목 · 한 문단 요약 · 키워드
+       ======================================================================== -->
+  <section class="detail-hero" data-accent="steel">
+    <div class="detail-hero__inner">
+
+      <nav class="breadcrumb" aria-label="現在地">
+        <a href="../index.html">ホーム</a>
+        <span aria-hidden="true">/</span>
+        <a href="../index.html#business">事業内容</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">IT &amp; Digital</span>
+      </nav>
+
+      <div class="detail-hero__icon">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="7" width="10" height="10" rx="1.5"/><path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.5 5.5l2.5 2.5M18.5 5.5 16 8M5.5 18.5 8 16M18.5 18.5 16 16"/></svg>
+      </div>
+
+      <span class="eyebrow"><span class="eyebrow__num">05</span> — IT &amp; DIGITAL</span>
+      <h1 class="detail-hero__title">不動産と暮らしを、もっと便利にする技術</h1>
+      <p class="detail-hero__lead">株式会社エイダスは、変化する時代に合わせて、不動産と生活サービスに IT と AI の技術を積極的に活用しています。</p>
+
+      <!-- 키워드 — 이 사업의 핵심 항목 -->
+      <ul class="detail-tags">
+        <li>Real Estate × IT</li>
+        <li>デジタルサービス</li>
+        <li>AI・社内システム</li>
+        <li>自社ソリューション開発</li>
+      </ul>
+
+      <!-- 사진을 넣고 싶다면 아래 주석을 풀고 파일을 assets/images/ 에 넣으세요.
+      <img class="photo detail-hero__photo" src="../../assets/images/biz-it.jpg"
+           alt="" width="1200" height="600" loading="lazy">
+      -->
+    </div>
+  </section>
+
+  <!-- 개요 -->
+  <section class="detail-section">
+    <div class="detail-section__inner">
+      <div class="detail-body detail-body--lead reveal">
+        <p>不動産業界は、いまも多くの部分で人と書類、複雑な手続きに依存しています。</p>
+        <p>エイダスは、こうした過程をデジタル技術によってより簡潔で効率的なものへ改善し、お客様と社員の双方に、より速く便利な不動産体験を提供することを目指しています。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 세부 항목 -->
+  <section class="detail-section detail-section--soft">
+    <div class="detail-section__inner">
+      <span class="eyebrow reveal">FOCUS</span>
+      <h2 class="detail-block__title reveal reveal--1">三つの方向から技術を活かします。</h2>
+
+      <div class="detail-list">
+        <article class="detail-item reveal">
+          <div class="detail-item__num">01</div>
+          <div class="detail-item__body">
+            <h3 class="detail-item__title">Real Estate × IT</h3>
+            <p class="detail-item__sub">不動産取引の新しいかたち</p>
+            <p>不動産を探し、契約する過程で生じるさまざまな情報をデジタル化し、お客様がより簡単に、より速く必要な情報を確認できる環境をつくっていきます。</p>
+            <p>物件と契約に関する情報だけでなく、お客様のお問い合わせや相談、契約の過程で発生する多様な業務を効率的につなぎ、より円滑な不動産取引の環境を構築します。</p>
+            <p>エイダスは、いまの不動産業界に IT 技術を取り入れて従来の不便な過程を改善し、これからの不動産サービスが進むべき方向を継続的に研究しています。</p>
+          </div>
+        </article>
+
+        <article class="detail-item reveal">
+          <div class="detail-item__num">02</div>
+          <div class="detail-item__body">
+            <h3 class="detail-item__title">Digital Service</h3>
+            <p class="detail-item__sub">日本での暮らしを、より便利に</p>
+            <p>不動産は、単に住まいを契約することで終わりではありません。</p>
+            <p>日本で暮らし、事業を営むためには、住まい、旅行、宿泊、生活情報など、さまざまなサービスが必要です。</p>
+            <p>エイダスは、こうした生活全般の情報をデジタルサービスとつなぎ、日本で暮らす外国人のお客様がより便利に情報を得て、サービスを利用できる環境をつくっています。</p>
+            <p>不動産を中心に始めて、お客様の日本での暮らし全体をより便利にすること。それが私たちの方向です。</p>
+          </div>
+        </article>
+
+        <article class="detail-item reveal">
+          <div class="detail-item__num">03</div>
+          <div class="detail-item__body">
+            <h3 class="detail-item__title">AI &amp; Internal Systems</h3>
+            <p class="detail-item__sub">技術を使う会社を超えて、技術で働く会社へ</p>
+            <p>エイダスは、お客様に提供するサービスだけでなく、社内の業務システムにも IT と AI を積極的に活用しています。</p>
+            <p>繰り返しの業務を自動化し、膨大な情報をより効率的に整理し、相談や契約、顧客管理などさまざまな業務の正確性と速度を高めています。</p>
+            <p>AI を単なる業務補助のツールとして使うにとどまらず、社員の経験とデータを蓄積し、それを再び業務に活かせるシステムを構築しています。</p>
+            <p>これにより、人の経験と判断が必要な業務にはより多くの時間を使い、繰り返しの非効率な業務は技術によって減らしていくことを目指します。</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 강조 단락: OUR DIGITAL VISION -->
+  <section class="detail-section">
+    <div class="detail-section__inner">
+      <span class="eyebrow reveal">OUR DIGITAL VISION</span>
+      <h2 class="detail-block__title reveal reveal--1">Technology should make business simpler.</h2>
+      <div class="detail-body reveal reveal--2">
+        <p>エイダスが考える IT の役割は、技術そのものではありません。</p>
+        <p class="detail-lines">
+          <span>もっと簡単に探し、</span>
+          <span>もっと速く比べ、</span>
+          <span>もっと便利に契約し、</span>
+          <span>もっと効率的に管理すること。</span>
+        </p>
+        <p>IT と AI によって既存事業の無駄な過程を減らし、お客様により良い体験を提供すること。それがエイダスのデジタル戦略です。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 마무리 단락 (네이비 배경) -->
+  <section class="detail-section detail-approach">
+    <div class="detail-section__inner">
+      <span class="eyebrow reveal">DEVELOPING THE FUTURE</span>
+      <h2 class="detail-approach__title reveal reveal--1">既存産業の経験に、新しい技術を。</h2>
+      <div class="detail-body reveal reveal--2">
+        <p>エイダスは、不動産と F&amp;B、起業および行政サービスなど既存事業で蓄積した経験をもとに、それらをつなぐ新しいデジタルサービスとシステムを継続的に開発しています。</p>
+        <p>現在進めているさまざまな IT プロジェクトを皮切りに、不動産と日本での暮らしに必要な情報とサービスを、より便利につなぐプラットフォームを構築していく計画です。</p>
+        <p class="detail-motto">Real Estate × Business × Life × Technology</p>
+        <p class="detail-close">既存産業の経験に新しい技術を加えて、<br>日本で暮らし、事業をする人々により良い環境をつくっていくこと。<br>それが株式会社エイダスの目指すデジタル事業の方向です。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       문의 유도
+       ======================================================================== -->
+  <section class="detail-section detail-cta">
+    <div class="detail-section__inner">
+      <h2 class="detail-cta__title reveal">この事業について、もっと知りたい方へ。</h2>
+      <p class="detail-cta__lead reveal reveal--1">何から始めればよいか分からなくても大丈夫です。状況をお聞かせいただければ、必要な手続きと順序を一緒に整理します。</p>
+
+      <div class="contact-channels reveal reveal--2">
+        <a class="btn btn--primary" href="mailto:property@aders-international.com">
+          メールでお問い合わせ <span class="btn__arrow">&rarr;</span>
+        </a>
+        <a class="btn" href="tel:+81666550328">06-6655-0328 <span class="btn__tag">不動産</span></a>
+        <a class="btn" href="tel:+81666550318">06-6655-0318 <span class="btn__tag">行政書士</span></a>
+        <a class="btn" href="../index.html#business">事業内容の一覧へ</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- 이전 / 다음 사업 -->
+  <nav class="detail-nav" aria-label="事業内容">
+    <a class="detail-nav__item detail-nav__item--prev" href="legal.html">
+      <span class="detail-nav__label">&larr; 前の事業</span>
+      <span class="detail-nav__title">行政書士</span>
+    </a>
+    <a class="detail-nav__item detail-nav__item--next" href="houber.html">
+      <span class="detail-nav__label">次の事業 &rarr;</span>
+      <span class="detail-nav__title">HOUBER・不動産</span>
+    </a>
+  </nav>
+
+</main>
+
+
+<!-- ==========================================================================
+     푸터 — 메인 페이지와 같은 내용입니다. 수정할 때는 함께 맞춰주세요.
+     ========================================================================== -->
+<footer class="site-footer">
+  <div class="footer-grid">
+
+    <div>
+      <div class="footer__brand">ADERS</div>
+      <address class="footer__address">
+        株式会社エイダス / ADERS International<br>
+        〒550-0004 大阪市西区靱本町1-7-17 7F<br>
+        TEL <a href="tel:+81666550328">06-6655-0328</a> · FAX 06-6655-0329<br>
+        <a href="mailto:property@aders-international.com">property@aders-international.com</a>
+      </address>
+
+      <!-- 담당자·번호가 바뀌면 모든 페이지에서 같은 값을 유지하세요. -->
+      <div class="footer__license">
+        宅地建物取引業免許 大阪府知事(2)第62361号<br>
+        宅地建物取引士 (大阪)第088239号 山中英樹<br>
+        大阪行政書士会 会員番号008980
+      </div>
+    </div>
+
+    <div>
+      <h2 class="footer__heading">MENU</h2>
+      <ul class="footer__list">
+        <li><a href="../index.html">ホーム</a></li>
+        <li><a href="../index.html#about">会社概要</a></li>
+        <li><a href="../index.html#goal">事業目標</a></li>
+        <li><a href="../index.html#business">事業内容</a></li>
+        <li><a href="../index.html#contact">お問い合わせ</a></li>
+        <li><a href="../../business/it.html" lang="ko" hreflang="ko">한국어</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h2 class="footer__heading">BUSINESS</h2>
+      <ul class="footer__list">
+        <li><a href="houber.html">HOUBER・不動産</a></li>
+        <li><a href="nubi.html">NUBI・レストラン</a></li>
+        <li><a href="startup.html">起業コンサルティング</a></li>
+        <li><a href="legal.html">行政書士</a></li>
+        <li><a href="it.html">IT・Proptech</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <span>&copy; 2026 ADERS INTERNATIONAL</span>
+    <!-- [수정] 각 정책 페이지를 만든 뒤 href 를 연결하세요. -->
+    <span>
+      <a href="#">プライバシーポリシー</a>
+      <a href="#">特定商取引法に基づく表記</a>
+    </span>
+  </div>
+</footer>
+
+</body>
+</html>
