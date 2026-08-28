@@ -26,6 +26,7 @@
    18. 인쇄 / 모션 최소화 설정
    19. 사업 상세 페이지 (business/*.html)
    20. 사업 상세 팝업 (.modal)
+   21. 소식·채널 (#news) & SNS 아이콘
    ========================================================================== */
 
 
@@ -1740,4 +1741,185 @@ body.is-modal-open .site-header { opacity: 0; pointer-events: none; }
 /* 인쇄할 때는 팝업을 숨깁니다. */
 @media print {
   .modal { display: none !important; }
+}
+
+
+/* ==========================================================================
+   21. 소식·채널 (#news) & SNS 아이콘
+   --------------------------------------------------------------------------
+   · .sns-row       문의 섹션 아래의 작은 SNS 아이콘 줄
+   · .channel-grid  "소식" 섹션의 채널 카드 3장
+   · .detail-sites  사업 팝업 안의 관계사 이동 버튼
+   · .footer-group  푸터의 관계사 목록
+   ========================================================================== */
+
+/* --- SNS 아이콘 줄 -------------------------------------------------------
+   문의 섹션 맨 아래에 놓입니다. 글자 없이 아이콘만 보여줍니다.
+   (스크린리더용 이름은 각 링크 안의 .visually-hidden 에 있습니다)
+   ------------------------------------------------------------------------ */
+.sns-row {
+  display: flex;
+  justify-content: center;
+  gap: 26px;
+  margin-top: 46px;
+}
+.sns-row__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  color: var(--color-steel);
+  transition: color 0.35s var(--ease), transform 0.35s var(--ease);
+}
+.sns-row__link:hover {
+  color: var(--color-navy);
+  transform: translateY(-2px);
+}
+.sns-row__link svg {
+  width: 27px;
+  height: 27px;
+}
+
+
+/* --- 소식 섹션 (#news) --------------------------------------------------- */
+.channel-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.channel-card {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 28px 26px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  background: var(--color-surface);
+  transition: transform 0.45s var(--ease), box-shadow 0.45s var(--ease);
+}
+.channel-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 22px 40px rgba(26, 37, 48, 0.1);
+}
+
+/* 카드별 강조색 — HTML의 data-accent 로 지정합니다. (사업 카드와 같은 방식) */
+.channel-card[data-accent="navy"]  { --accent: var(--color-navy); }
+.channel-card[data-accent="blue"]  { --accent: var(--color-blue); }
+.channel-card[data-accent="slate"] { --accent: var(--color-slate); }
+
+.channel-card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  margin-bottom: 20px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--accent) 16%, var(--color-surface));
+  color: var(--accent);
+}
+.channel-card__icon svg { width: 25px; height: 25px; }
+
+.channel-card__name {
+  margin: 0 0 4px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.35;
+  color: var(--color-navy);
+}
+.channel-card__handle {
+  display: block;
+  margin-bottom: 16px;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.04em;
+  color: var(--color-text-mute);
+  word-break: break-all;
+}
+.channel-card__text {
+  margin: 0 0 20px;
+  font-size: 12.6px;
+  line-height: 1.9;
+  color: var(--color-text-soft);
+  word-break: keep-all;
+}
+/* 하단 링크 — margin-top:auto 로 카드 바닥에 붙습니다. */
+.channel-card__go {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid var(--color-border);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--color-text-soft);
+  transition: color 0.35s var(--ease), gap 0.35s var(--ease);
+}
+.channel-card:hover .channel-card__go { color: var(--accent); gap: 12px; }
+
+
+/* --- 사업 팝업 안의 관계사 버튼 (.detail-sites) --------------------------
+   HOUBER 상세 페이지 머리에 들어갑니다.
+   다른 사업에도 관련 사이트가 생기면 같은 구조를 복사해서 쓰면 됩니다.
+   ------------------------------------------------------------------------ */
+.detail-sites {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 26px;
+}
+.detail-site {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 13px 20px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-soft);
+  background: var(--color-surface);
+  transition: border-color 0.35s var(--ease), transform 0.35s var(--ease);
+}
+.detail-site:hover {
+  border-color: var(--accent, var(--color-navy));
+  transform: translateY(-2px);
+}
+.detail-site__label {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.12em;
+  color: var(--color-text-mute);
+}
+.detail-site__name {
+  font-family: var(--font-display);
+  font-size: 15px;
+  color: var(--color-navy);
+}
+
+
+/* --- 푸터 관계사 목록 ---------------------------------------------------- */
+/* 칸이 하나 늘었으므로 4단으로 바꿉니다. (반응형은 17번에서 처리) */
+.footer-grid { grid-template-columns: 1.25fr 0.85fr 1fr 1fr; }
+
+.footer__list a[target="_blank"]::after {
+  content: " \2197";
+  font-size: 0.9em;
+  color: var(--color-text-mute);
+}
+
+
+/* --- 반응형 -------------------------------------------------------------- */
+@media (max-width: 1080px) {
+  .channel-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid  { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 760px) {
+  .channel-grid { grid-template-columns: 1fr; }
+  .footer-grid  { grid-template-columns: 1fr; }
+  .sns-row      { gap: 22px; margin-top: 38px; }
+  .detail-sites { flex-direction: column; }
+  .detail-site  { width: 100%; }
 }

@@ -39,8 +39,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Shippori+Mincho:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <!-- 메인 페이지와 같은 스타일·스크립트를 함께 사용합니다 -->
-<link rel="stylesheet" href="../assets/css/style.css?v=20260828">
-<script src="../assets/js/main.js?v=20260828" defer></script>
+<link rel="stylesheet" href="../assets/css/style.css?v=20260828b">
+<script src="../assets/js/main.js?v=20260828b" defer></script>
 </head>
 
 <body>
@@ -142,6 +142,21 @@
         <li>입주자 심사</li>
         <li>외국인 임대차 지원</li>
       </ul>
+
+      <!-- 관계사 이동 — 이 블록은 팝업 안에도 그대로 나타납니다.
+           [수정] 관계사 사이트 주소. 메인 페이지 푸터의 GROUP 목록과 같은 값을 유지하세요. -->
+      <div class="detail-sites">
+        <a class="detail-site" href="https://www.houber-home.com" target="_blank" rel="noopener">
+          <span class="detail-site__label">부동산 매물</span>
+          <span class="detail-site__name">HOUBER <span aria-hidden="true">&#8599;</span></span>
+          <span class="visually-hidden">(새 창에서 열림)</span>
+        </a>
+        <a class="detail-site" href="https://houber-business.com/ko/" target="_blank" rel="noopener">
+          <span class="detail-site__label">비즈니스 서비스</span>
+          <span class="detail-site__name">HOUBER BUSINESS <span aria-hidden="true">&#8599;</span></span>
+          <span class="visually-hidden">(새 창에서 열림)</span>
+        </a>
+      </div>
 
       <!-- 사진을 넣고 싶다면 아래 주석을 풀고 파일을 assets/images/ 에 넣으세요.
       <img class="photo detail-hero__photo" src="../assets/images/biz-houber.jpg"
@@ -323,6 +338,15 @@
         <li><a href="startup.html">창업 컨설팅</a></li>
         <li><a href="legal.html">행정서사</a></li>
         <li><a href="it.html">IT · Proptech</a></li>
+      </ul>
+    </div>
+
+    <!-- 관계사 — HOUBER 의 두 서비스 사이트 -->
+    <div>
+      <h2 class="footer__heading">GROUP</h2>
+      <ul class="footer__list">
+        <li><a href="https://www.houber-home.com" target="_blank" rel="noopener">HOUBER · 부동산 매물<span class="visually-hidden"> (새 창에서 열림)</span></a></li>
+        <li><a href="https://houber-business.com/ko/" target="_blank" rel="noopener">HOUBER BUSINESS<span class="visually-hidden"> (새 창에서 열림)</span></a></li>
       </ul>
     </div>
 

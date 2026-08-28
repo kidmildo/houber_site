@@ -20,7 +20,7 @@
      개발자도구(F12) → Console 에 아래 문구가 찍힙니다.
      화면이 예전 그대로라면 이 날짜가 옛날 것인지 확인해 보세요.
      ※ CSS·JS를 고친 뒤에는 이 날짜와, HTML 12장의 ?v= 값을 함께 올려주세요. */
-  var VERSION = '20260828';
+  var VERSION = '20260828b';
   if (window.console && console.log) {
     console.log('ADERS site — main.js v' + VERSION);
   }

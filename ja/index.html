@@ -56,8 +56,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Shippori+Mincho:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <!-- 공통 스타일 · 스크립트 (상위 폴더의 파일을 함께 사용) -->
-<link rel="stylesheet" href="../assets/css/style.css?v=20260828">
-<script src="../assets/js/main.js?v=20260828" defer></script>
+<link rel="stylesheet" href="../assets/css/style.css?v=20260828b">
+<script src="../assets/js/main.js?v=20260828b" defer></script>
 </head>
 
 <body>
@@ -93,6 +93,7 @@
       </div>
     </div>
 
+    <a class="site-nav__link" href="#news">お知らせ</a>
     <a class="site-nav__link" href="#contact">お問い合わせ</a>
 
     <!-- 언어 전환 — 한국어 페이지(상위 폴더)로 이동 -->
@@ -115,6 +116,7 @@
   <a class="mobile-menu__link" href="#about">会社概要</a>
   <a class="mobile-menu__link" href="#goal">事業目標</a>
   <a class="mobile-menu__link" href="#business">事業内容</a>
+  <a class="mobile-menu__link" href="#news">お知らせ</a>
   <a class="mobile-menu__link" href="#contact">お問い合わせ</a>
 
   <div class="mobile-menu__footer">
@@ -456,12 +458,80 @@
 
 
   <!-- ========================================================================
-       06. お問い合わせ
+       06. 소식 — 채널 안내
+       [수정] 채널 주소를 바꿀 때는 아래 세 개의 href 를 고치면 됩니다.
+              (문의 섹션 아래의 SNS 아이콘 줄과 푸터에도 같은 주소가 있습니다)
+
+       나중에 "최신 글·영상"을 카드로 보여주고 싶으시면,
+       유튜브 영상 주소와 블로그 글 주소를 알려주세요. 카드가 추가됩니다.
+       ======================================================================== -->
+  <section class="section" id="news">
+    <div class="section__inner">
+
+      <span class="eyebrow reveal"><span class="eyebrow__num">05</span> — NEWS</span>
+      <h2 class="section__title reveal reveal--1">現場で積み重ねた話をお届けします。</h2>
+
+      <p class="section__lead reveal reveal--2">大阪の物件と日々の現場、日本で暮らし事業をするなかで分かったことを各チャンネルに記録しています。</p>
+
+      <div class="channel-grid">
+        <a class="channel-card reveal" data-accent="navy" href="https://www.instagram.com/osaka_houber/" target="_blank" rel="noopener">
+          <div class="channel-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="3" y="3" width="18" height="18" rx="5.4"/>
+          <circle cx="12" cy="12" r="4.1"/>
+          <circle cx="17.3" cy="6.7" r="1.15" fill="currentColor" stroke="none"/>
+        </svg>
+          </div>
+          <h3 class="channel-card__name">Instagram</h3>
+          <span class="channel-card__handle">@osaka_houber</span>
+          <p class="channel-card__text">大阪の物件と現場、そしてエイダスの日常を写真でお伝えします。</p>
+          <span class="channel-card__go">Instagram を見る <span aria-hidden="true">&#8599;</span></span>
+          <span class="visually-hidden">(新しいウィンドウで開きます)</span>
+        </a>
+
+        <a class="channel-card reveal" data-accent="blue" href="https://blog.naver.com/houber" target="_blank" rel="noopener">
+          <div class="channel-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M19.6 3.6H4.4a1.8 1.8 0 0 0-1.8 1.8v9.2a1.8 1.8 0 0 0 1.8 1.8h2.9v3.4l3.8-3.4h8.5a1.8 1.8 0 0 0 1.8-1.8V5.4a1.8 1.8 0 0 0-1.8-1.8z"/>
+          <text x="12" y="12.6" text-anchor="middle" font-family="IBM Plex Sans KR, sans-serif"
+                font-size="6.1" font-weight="600" fill="currentColor" stroke="none">blog</text>
+        </svg>
+          </div>
+          <h3 class="channel-card__name">ブログ (NAVER)</h3>
+          <span class="channel-card__handle">blog.naver.com/houber</span>
+          <p class="channel-card__text">日本の不動産・ビザ・起業に関する情報を記事にまとめています。(韓国語)</p>
+          <span class="channel-card__go">ブログを見る <span aria-hidden="true">&#8599;</span></span>
+          <span class="visually-hidden">(新しいウィンドウで開きます)</span>
+        </a>
+
+        <a class="channel-card reveal" data-accent="slate" href="https://www.youtube.com/@Houber_Official" target="_blank" rel="noopener">
+          <div class="channel-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="2.4" y="5.4" width="19.2" height="13.2" rx="4.2"/>
+          <path d="M10.3 9.2 15.2 12l-4.9 2.8z" fill="currentColor" stroke="none"/>
+        </svg>
+          </div>
+          <h3 class="channel-card__name">YouTube</h3>
+          <span class="channel-card__handle">@Houber_Official</span>
+          <p class="channel-card__text">日本での暮らしと不動産の話を映像でお届けします。</p>
+          <span class="channel-card__go">チャンネルを見る <span aria-hidden="true">&#8599;</span></span>
+          <span class="visually-hidden">(新しいウィンドウで開きます)</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================================
+       07. お問い合わせ
        ======================================================================== -->
   <section class="section" id="contact">
     <div class="section__inner">
 
-      <span class="eyebrow reveal"><span class="eyebrow__num">05</span> — CONTACT</span>
+      <span class="eyebrow reveal"><span class="eyebrow__num">06</span> — CONTACT</span>
 
       <h2 class="section__title reveal reveal--1">
         成功する日本生活の始まりに、<br>ADERSへご相談ください。
@@ -486,6 +556,36 @@
 
         <a class="btn" href="tel:+81666550328">06-6655-0328 <span class="btn__tag">不動産</span></a>
         <a class="btn" href="tel:+81666550318">06-6655-0318 <span class="btn__tag">行政書士</span></a>
+      </div>
+
+      <!-- SNS 채널 — 소식 섹션·푸터와 같은 주소를 씁니다. 바꿀 때는 함께 고쳐주세요. -->
+      <div class="sns-row reveal reveal--3">
+        <a class="sns-row__link" href="https://www.instagram.com/osaka_houber/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="3" y="3" width="18" height="18" rx="5.4"/>
+          <circle cx="12" cy="12" r="4.1"/>
+          <circle cx="17.3" cy="6.7" r="1.15" fill="currentColor" stroke="none"/>
+        </svg>
+          <span class="visually-hidden">Instagram (新しいウィンドウで開きます)</span>
+        </a>
+        <a class="sns-row__link" href="https://blog.naver.com/houber" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M19.6 3.6H4.4a1.8 1.8 0 0 0-1.8 1.8v9.2a1.8 1.8 0 0 0 1.8 1.8h2.9v3.4l3.8-3.4h8.5a1.8 1.8 0 0 0 1.8-1.8V5.4a1.8 1.8 0 0 0-1.8-1.8z"/>
+          <text x="12" y="12.6" text-anchor="middle" font-family="IBM Plex Sans KR, sans-serif"
+                font-size="6.1" font-weight="600" fill="currentColor" stroke="none">blog</text>
+        </svg>
+          <span class="visually-hidden">ブログ (新しいウィンドウで開きます)</span>
+        </a>
+        <a class="sns-row__link" href="https://www.youtube.com/@Houber_Official" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="2.4" y="5.4" width="19.2" height="13.2" rx="4.2"/>
+          <path d="M10.3 9.2 15.2 12l-4.9 2.8z" fill="currentColor" stroke="none"/>
+        </svg>
+          <span class="visually-hidden">YouTube (新しいウィンドウで開きます)</span>
+        </a>
       </div>
 
     </div>
@@ -562,6 +662,7 @@
         <li><a href="#about">会社概要</a></li>
         <li><a href="#goal">事業目標</a></li>
         <li><a href="#business">事業内容</a></li>
+        <li><a href="#news">お知らせ</a></li>
         <li><a href="#contact">お問い合わせ</a></li>
         <li><a href="../" lang="ko" hreflang="ko">한국어</a></li>
       </ul>
@@ -575,6 +676,15 @@
         <li><a href="business/startup.html">起業コンサルティング</a></li>
         <li><a href="business/legal.html">行政書士</a></li>
         <li><a href="business/it.html">IT・Proptech</a></li>
+      </ul>
+    </div>
+
+    <!-- 관계사 — HOUBER 의 두 서비스 사이트 -->
+    <div>
+      <h2 class="footer__heading">GROUP</h2>
+      <ul class="footer__list">
+        <li><a href="https://www.houber-home.com" target="_blank" rel="noopener">HOUBER・不動産物件<span class="visually-hidden"> (新しいウィンドウで開きます)</span></a></li>
+        <li><a href="https://houber-business.com/" target="_blank" rel="noopener">HOUBER BUSINESS<span class="visually-hidden"> (新しいウィンドウで開きます)</span></a></li>
       </ul>
     </div>
 
