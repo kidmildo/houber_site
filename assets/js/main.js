@@ -146,7 +146,13 @@
          링크 그대로 상세 페이지가 열리므로 내용이 사라지지 않습니다.
        · 주소창도 함께 바뀌므로 뒤로가기로 팝업을 닫을 수 있습니다.
 
-     새 사업을 추가해도 링크가 business/…html 형태이면
+     ★ 주소를 바꿀 때 반드시 "?biz=houber" 형태(쿼리)를 써야 합니다. ★
+       "business/houber.html" 처럼 경로를 바꾸면
+       페이지의 기준 위치가 /business/ 로 옮겨져서,
+       그다음에 누르는 카드가 business/business/… 로 잘못 이어집니다.
+       쿼리만 바꾸면 기준 위치가 그대로라 이 문제가 생기지 않습니다.
+
+     새 사업을 추가해도 링크가 business/…html 형태이기만 하면
      자동으로 팝업이 적용됩니다. 따로 등록할 필요가 없습니다.
      ------------------------------------------------------------------ */
   var modal = document.getElementById('biz-modal');
@@ -162,11 +168,32 @@
     var lastFocus = null;    // 팝업을 연 버튼 (닫을 때 여기로 초점을 되돌립니다)
     var pushedUrl = false;   // 주소를 바꿨는지 여부 (뒤로가기 처리에 필요)
 
+    /** business/houber.html → "houber" (영문·숫자·하이픈만 허용) */
+    function slugOf(href) {
+      var m = String(href).match(/([a-z0-9-]+)\.html(?:[?#].*)?$/i);
+      return m ? m[1].toLowerCase() : null;
+    }
+
+    /** "houber" → business/houber.html
+        (이 페이지 기준의 상대경로이므로 한국어·일본어 양쪽에서 그대로 맞습니다) */
+    function pageOf(slug) {
+      return 'business/' + slug + '.html';
+    }
+
+    /** 현재 주소의 ?biz= 값을 읽습니다. 없으면 null */
+    function slugInUrl() {
+      var m = window.location.search.match(/[?&]biz=([a-z0-9-]+)/i);
+      return m ? m[1].toLowerCase() : null;
+    }
+
     /**
      * 팝업을 엽니다.
-     * @param {string} url  상세 페이지 주소 (예: business/houber.html)
+     * @param {string}  slug      사업 이름 (houber, nubi …)
+     * @param {boolean} push      주소창도 ?biz=… 로 바꿀지
+     * @param {boolean} fallback  못 읽었을 때 상세 페이지로 이동할지
+     *                            (주소로 직접 들어온 경우에는 이동하지 않습니다)
      */
-    function openModal(url) {
+    function openModal(slug, push, fallback) {
       lastFocus = document.activeElement;
 
       modal.hidden = false;
@@ -174,24 +201,25 @@
       document.body.style.overflow = 'hidden';   // 뒤쪽 본문 스크롤 잠금
       modalPanel.scrollTop = 0;
 
-      if (modalFull)  { modalFull.setAttribute('href', url); }
+      if (modalFull)  { modalFull.setAttribute('href', pageOf(slug)); }
       if (modalClose) { modalClose.focus(); }
 
-      // 주소창을 상세 페이지 주소로 바꿔둡니다.
-      // → 뒤로가기를 누르면 팝업이 닫히고, 새로고침하면 상세 페이지가 그대로 열립니다.
-      try {
-        history.pushState({ bizModal: url }, '', url);
-        pushedUrl = true;
-      } catch (e) {
-        pushedUrl = false;   // 아주 오래된 브라우저 — 주소는 그대로 두고 팝업만 씁니다
+      if (push) {
+        // 쿼리만 바꿉니다. 경로를 바꾸면 상대경로가 전부 어긋납니다. (위 설명 참고)
+        try {
+          history.pushState({ bizModal: slug }, '', '?biz=' + slug);
+          pushedUrl = true;
+        } catch (e) {
+          pushedUrl = false;   // 아주 오래된 브라우저 — 주소는 그대로 두고 팝업만 씁니다
+        }
       }
 
-      loadInto(url);
+      loadInto(slug, fallback);
     }
 
     /**
      * 팝업을 닫습니다.
-     * @param {boolean} goBack  주소도 원래대로 되돌릴지 여부
+     * @param {boolean} goBack  주소도 원래대로 되돌릴지
      *                          (뒤로가기로 닫힌 경우에는 이미 되돌아왔으므로 false)
      */
     function closeModal(goBack) {
@@ -204,6 +232,9 @@
       if (goBack && pushedUrl) {
         pushedUrl = false;
         history.back();
+      } else if (goBack && slugInUrl()) {
+        // ?biz=… 주소로 직접 들어온 경우 — 되돌아갈 기록이 없으므로 쿼리만 지웁니다.
+        try { history.replaceState({}, '', window.location.pathname); } catch (e) {}
       }
     }
 
@@ -216,9 +247,11 @@
     }
 
     /** 상세 페이지를 읽어와 팝업 안에 넣습니다. */
-    function loadInto(url) {
-      if (cache[url]) {
-        modalBody.innerHTML = cache[url];
+    function loadInto(slug, fallback) {
+      var url = pageOf(slug);
+
+      if (cache[slug]) {
+        modalBody.innerHTML = cache[slug];
         revealAll(modalBody);
         return;
       }
@@ -240,15 +273,20 @@
           var crumb = part.querySelector('.breadcrumb');
           if (crumb) { crumb.parentNode.removeChild(crumb); }
 
-          cache[url] = part.innerHTML;
-          modalBody.innerHTML = cache[url];
+          cache[slug] = part.innerHTML;
+          modalBody.innerHTML = cache[slug];
           revealAll(modalBody);
         })
         .catch(function () {
-          // 읽지 못했다면(예: 파일을 브라우저로 직접 연 경우)
-          // 팝업을 접고 원래대로 상세 페이지로 이동합니다.
-          closeModal(false);
-          window.location.href = url;
+          if (fallback) {
+            // 링크를 눌렀는데 읽지 못한 경우(예: 파일을 브라우저로 직접 연 경우)
+            // 원래대로 상세 페이지로 이동합니다.
+            closeModal(false);
+            window.location.href = url;
+          } else {
+            // 주소에 엉뚱한 ?biz= 값이 들어온 경우 — 조용히 닫습니다.
+            closeModal(true);
+          }
         });
     }
 
@@ -259,6 +297,9 @@
       var link = event.target.closest('a[href*="business/"][href$=".html"]');
       if (!link) { return; }
 
+      // 팝업 안의 "전체 페이지로 보기"는 진짜로 페이지를 열어야 합니다.
+      if (link.closest('.modal')) { return; }
+
       // 새 탭으로 열려는 경우(Cmd/Ctrl/Shift)는 브라우저에 맡깁니다.
       if (event.metaKey || event.ctrlKey || event.shiftKey) { return; }
       if (link.target === '_blank') { return; }
@@ -266,8 +307,11 @@
       // fetch 를 못 쓰는 환경이면 평범한 링크로 동작하게 둡니다.
       if (!window.fetch || !window.DOMParser) { return; }
 
+      var slug = slugOf(link.getAttribute('href'));
+      if (!slug) { return; }
+
       event.preventDefault();
-      openModal(link.getAttribute('href'));
+      openModal(slug, true, true);
     });
 
     // --- 닫기 ------------------------------------------------------------
@@ -283,13 +327,25 @@
       if (event.key === 'Escape' && !modal.hidden) { closeModal(true); }
     });
 
-    // 브라우저 뒤로가기로 닫기
+    // 뒤로가기·앞으로가기로 열고 닫기
     window.addEventListener('popstate', function () {
-      if (!modal.hidden) {
-        pushedUrl = false;   // 주소는 이미 되돌아왔으므로 history.back() 을 부르지 않습니다
+      var slug = slugInUrl();
+
+      if (slug && modal.hidden) {
+        pushedUrl = true;                 // 앞으로가기로 다시 열린 경우
+        openModal(slug, false, false);
+      } else if (!slug && !modal.hidden) {
+        pushedUrl = false;                // 주소는 이미 되돌아왔습니다
         closeModal(false);
       }
     });
+
+    // --- 주소로 바로 들어온 경우 (예: /?biz=houber) -----------------------
+    var initialSlug = slugInUrl();
+    if (initialSlug && window.fetch && window.DOMParser) {
+      pushedUrl = false;
+      openModal(initialSlug, false, false);
+    }
   }
 
 })();
