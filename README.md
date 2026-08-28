@@ -77,6 +77,36 @@ npx serve .
 
 ## 3. 자주 하는 수정
 
+### 3-0. ⚠️ 고쳤는데 화면이 그대로일 때 (캐시)
+
+브라우저는 한 번 받은 `style.css` · `main.js` 를 한동안 다시 받지 않습니다.
+그래서 **디자인·동작을 고쳤는데 화면이 그대로**인 일이 생깁니다.
+
+이를 막기 위해 HTML에서 두 파일을 이렇게 부르고 있습니다.
+
+```html
+<link rel="stylesheet" href="assets/css/style.css?v=20260828">
+<script src="assets/js/main.js?v=20260828" defer></script>
+```
+
+> **`style.css` 나 `main.js` 를 고쳤다면, 이 `?v=` 날짜를 바꿔주세요.**
+> 값이 바뀌면 브라우저가 새 파일로 인식해 반드시 다시 받아갑니다.
+> HTML 12장 + `404.html` 을 한 번에 바꾸는 명령 (macOS):
+>
+> ```bash
+> grep -rl "?v=20260828" . --include="*.html" \
+>   | xargs sed -i '' 's/?v=20260828/?v=20260901/g'
+> ```
+>
+> `assets/js/main.js` 맨 위의 `VERSION` 값도 같이 바꿔두면,
+> 개발자도구 Console 에서 지금 어느 버전이 도는지 바로 확인할 수 있습니다.
+
+**지금 브라우저가 어느 버전을 쓰는지 확인하는 법**
+개발자도구(`F12` 또는 `Cmd + Option + I`) → **Console** 탭에
+`ADERS site — main.js v20260828` 이 찍힙니다. 날짜가 예전 것이면 캐시 문제입니다.
+
+---
+
 ### 3-1. 색상 바꾸기
 
 `assets/css/style.css` 맨 위 **"01. 디자인 토큰"** 블록만 고치면 됩니다.
