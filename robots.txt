@@ -7,4 +7,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.aders-international.com/sitemap.xml
+Sitemap: https://houber-site.pages.dev/sitemap.xml

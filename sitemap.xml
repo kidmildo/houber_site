@@ -2,11 +2,14 @@
 <!--
   ============================================================================
   sitemap.xml — 검색엔진에 페이지 목록을 알려주는 파일
-  ----------------------------------------------------------------------------
-  [수정] 배포 도메인이 다르면 아래 모든 주소를 바꿔주세요.
-  [수정] 내용을 크게 고쳤을 때는 <lastmod> 날짜를 갱신하면 좋습니다.
+  ============================================================================
+  · 배포 도메인이 바뀌면 아래 모든 주소를 함께 바꿔주세요.
+  · 내용을 크게 고쳤을 때는 lastmod 날짜를 갱신하면 좋습니다.
+  · 페이지를 새로 추가하면 url 블록을 복사해서 늘리면 됩니다.
 
-  페이지를 새로 추가하면 <url> 블록을 복사해서 늘리면 됩니다.
+  ※ XML 주석 안에는 하이픈을 두 개 연속으로 쓸 수 없습니다.
+     구분선을 그을 때는 = 기호를 쓰세요. 하이픈을 쓰면 파일 전체가 깨져
+     검색엔진이 사이트맵을 읽지 못합니다.
   ============================================================================
 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
@@ -14,117 +17,117 @@
 
   <!-- 한국어 메인 -->
   <url>
-    <loc>https://www.aders-international.com/</loc>
+    <loc>https://houber-site.pages.dev/</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://www.aders-international.com/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.aders-international.com/ja/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.aders-international.com/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://houber-site.pages.dev/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://houber-site.pages.dev/ja/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://houber-site.pages.dev/"/>
   </url>
 
   <!-- 일본어 메인 -->
   <url>
-    <loc>https://www.aders-international.com/ja/</loc>
+    <loc>https://houber-site.pages.dev/ja/</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://www.aders-international.com/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.aders-international.com/ja/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.aders-international.com/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://houber-site.pages.dev/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://houber-site.pages.dev/ja/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://houber-site.pages.dev/"/>
   </url>
 
 
   <!-- 사업 상세 페이지 (한국어 / 일본어 쌍) -->
   <url>
-    <loc>https://www.aders-international.com/business/houber.html</loc>
+    <loc>https://houber-site.pages.dev/business/houber.html</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://www.aders-international.com/business/houber.html"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.aders-international.com/ja/business/houber.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.aders-international.com/business/houber.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://houber-site.pages.dev/business/houber.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://houber-site.pages.dev/ja/business/houber.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://houber-site.pages.dev/business/houber.html"/>
   </url>
   <url>
-    <loc>https://www.aders-international.com/ja/business/houber.html</loc>
+    <loc>https://houber-site.pages.dev/ja/business/houber.html</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://www.aders-international.com/business/houber.html"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.aders-international.com/ja/business/houber.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.aders-international.com/business/houber.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://houber-site.pages.dev/business/houber.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://houber-site.pages.dev/ja/business/houber.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://houber-site.pages.dev/business/houber.html"/>
   </url>
   <url>
-    <loc>https://www.aders-international.com/business/nubi.html</loc>
+    <loc>https://houber-site.pages.dev/business/nubi.html</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://www.aders-international.com/business/nubi.html"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.aders-international.com/ja/business/nubi.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.aders-international.com/business/nubi.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://houber-site.pages.dev/business/nubi.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://houber-site.pages.dev/ja/business/nubi.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://houber-site.pages.dev/business/nubi.html"/>
   </url>
   <url>
-    <loc>https://www.aders-international.com/ja/business/nubi.html</loc>
+    <loc>https://houber-site.pages.dev/ja/business/nubi.html</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://www.aders-international.com/business/nubi.html"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.aders-international.com/ja/business/nubi.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.aders-international.com/business/nubi.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://houber-site.pages.dev/business/nubi.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://houber-site.pages.dev/ja/business/nubi.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://houber-site.pages.dev/business/nubi.html"/>
   </url>
   <url>
-    <loc>https://www.aders-international.com/business/startup.html</loc>
+    <loc>https://houber-site.pages.dev/business/startup.html</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://www.aders-international.com/business/startup.html"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.aders-international.com/ja/business/startup.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.aders-international.com/business/startup.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://houber-site.pages.dev/business/startup.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://houber-site.pages.dev/ja/business/startup.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://houber-site.pages.dev/business/startup.html"/>
   </url>
   <url>
-    <loc>https://www.aders-international.com/ja/business/startup.html</loc>
+    <loc>https://houber-site.pages.dev/ja/business/startup.html</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://www.aders-international.com/business/startup.html"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.aders-international.com/ja/business/startup.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.aders-international.com/business/startup.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://houber-site.pages.dev/business/startup.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://houber-site.pages.dev/ja/business/startup.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://houber-site.pages.dev/business/startup.html"/>
   </url>
   <url>
-    <loc>https://www.aders-international.com/business/legal.html</loc>
+    <loc>https://houber-site.pages.dev/business/legal.html</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://www.aders-international.com/business/legal.html"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.aders-international.com/ja/business/legal.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.aders-international.com/business/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://houber-site.pages.dev/business/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://houber-site.pages.dev/ja/business/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://houber-site.pages.dev/business/legal.html"/>
   </url>
   <url>
-    <loc>https://www.aders-international.com/ja/business/legal.html</loc>
+    <loc>https://houber-site.pages.dev/ja/business/legal.html</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://www.aders-international.com/business/legal.html"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.aders-international.com/ja/business/legal.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.aders-international.com/business/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://houber-site.pages.dev/business/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://houber-site.pages.dev/ja/business/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://houber-site.pages.dev/business/legal.html"/>
   </url>
   <url>
-    <loc>https://www.aders-international.com/business/it.html</loc>
+    <loc>https://houber-site.pages.dev/business/it.html</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://www.aders-international.com/business/it.html"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.aders-international.com/ja/business/it.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.aders-international.com/business/it.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://houber-site.pages.dev/business/it.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://houber-site.pages.dev/ja/business/it.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://houber-site.pages.dev/business/it.html"/>
   </url>
   <url>
-    <loc>https://www.aders-international.com/ja/business/it.html</loc>
+    <loc>https://houber-site.pages.dev/ja/business/it.html</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://www.aders-international.com/business/it.html"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.aders-international.com/ja/business/it.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.aders-international.com/business/it.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://houber-site.pages.dev/business/it.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://houber-site.pages.dev/ja/business/it.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://houber-site.pages.dev/business/it.html"/>
   </url>
 
 </urlset>

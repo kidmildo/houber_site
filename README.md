@@ -36,6 +36,7 @@
 │       └── README.md       ← 사진 넣는 방법 안내
 ├── favicon.svg             ← 브라우저 탭 아이콘
 ├── 404.html                ← 없는 페이지에 접속했을 때 화면
+├── _headers                ← 배포 설정 (브라우저 보관 기간)
 ├── robots.txt              ← 검색엔진 안내
 ├── sitemap.xml             ← 검색엔진용 페이지 목록
 └── README.md               ← 이 파일
@@ -268,19 +269,21 @@ HTML 파일 안에서 `[수정]` 이라고 적힌 주석을 찾으면 됩니다.
       > 면허·등록 정보는 **메인 2장 + 상세 10장, 총 12곳**에 있습니다.
       > 한 곳만 고치면 값이 어긋나므로 반드시 전부 함께 갱신하세요.
 
-- [ ] **4. 도메인 주소 교체**
-      아래 파일들에 `https://www.aders-international.com` 이 들어 있습니다.
-      실제 배포 주소가 다르면 전부 바꿔주세요.
+- [~] **4. 도메인 주소 교체**  ← 임시 주소 적용 완료, 실제 도메인 구입 후 재교체
+      현재는 Cloudflare Pages 기본 주소 `https://houber-site.pages.dev` 가
+      아래 파일들에 들어가 있습니다.
       - `index.html` / `ja/index.html` (canonical, hreflang, og:url)
       - `business/*.html` / `ja/business/*.html` (10장, 동일)
       - `robots.txt` (Sitemap 주소)
       - `sitemap.xml` (모든 `<loc>`, `<xhtml:link>`)
 
+      실제 도메인을 구입하면 아래 한 줄로 전부 바꿉니다 (macOS).
       ```bash
-      # 한 번에 바꾸는 예 (macOS)
-      grep -rl "www.aders-international.com" . --include="*.html" --include="*.xml" --include="*.txt" \
-        | xargs sed -i '' 's|www.aders-international.com|새주소.com|g'
+      grep -rl "houber-site.pages.dev" . --include="*.html" --include="*.xml" --include="*.txt" \
+        | xargs sed -i '' 's|houber-site.pages.dev|새도메인.com|g'
       ```
+      > ⚠️ `property@aders-international.com` 은 **메일 주소**이므로 건드리면 안 됩니다.
+      > 위 명령은 `pages.dev` 만 골라 바꾸므로 메일 주소는 그대로 남습니다.
 
 - [x] ~~**5. 카카오톡 상담 링크 연결**~~ ✅ 완료
       카카오톡 채널 `https://pf.kakao.com/_qTEPj` 로 연결했습니다.
@@ -303,53 +306,63 @@ HTML 파일 안에서 `[수정]` 이라고 적힌 주석을 찾으면 됩니다.
 
 ## 5. 배포 방법
 
-정적 사이트라서 아래 어디에 올려도 동일하게 동작합니다.
-**사이트가 저장소 루트에 있으므로, 빌드 명령어도 폴더 지정도 필요 없습니다.**
+**현재 배포처: Cloudflare Pages**
+`main` 브랜치에 push 하면 1~2분 뒤 자동으로 사이트에 반영됩니다.
+빌드 도구가 없으므로 빌드 명령어도, 출력 폴더 지정도 필요 없습니다.
 
-사이트는 기본 브랜치인 `main` 에 있습니다.
+### 처음 한 번만 하는 설정
 
-### GitHub Pages (가장 간단 — 별도 가입 불필요)
+1. [dash.cloudflare.com](https://dash.cloudflare.com) 가입 (무료)
+2. 왼쪽 메뉴 **Workers & Pages** → **Create** → **Pages** 탭 → **Connect to Git**
+3. GitHub 계정을 연결하고 `kidmildo/houber_site` 저장소를 선택
+4. 설정 화면에서:
 
-1. 저장소 Settings → Pages
-2. Source: **Deploy from a branch**
-3. Branch: **`main`** + 폴더는 **`/ (root)`**
-4. Save → 1~2분 뒤 `https://kidmildo.github.io/houber_site/` 에서 확인
+   | 항목 | 값 |
+   | --- | --- |
+   | Project name | **`houber-site`** ← 이 이름이 주소가 됩니다 |
+   | Production branch | `main` |
+   | Framework preset | **None** |
+   | Build command | **(비워둠)** |
+   | Build output directory | **(비워둠)** |
 
-> ⚠️ GitHub Pages 는 하위 경로(`/houber_site/`)로 배포됩니다.
-> 이 경우 `404.html` 안의 `/` 로 시작하는 링크가 저장소 밖(`kidmildo.github.io/`)을
-> 가리키게 되므로, 실제 도메인을 연결하거나 아래 Cloudflare Pages 를 쓰는 편이 좋습니다.
+5. **Save and Deploy** → 1~2분 뒤 `https://houber-site.pages.dev` 에서 확인
 
-### Cloudflare Pages (추천 — 일본/한국 양쪽 속도가 안정적)
+> ⚠️ **Project name 은 반드시 `houber-site` 로** 해주세요.
+> 코드 안의 사이트 주소(canonical·sitemap 등)가 이 이름에 맞춰져 있습니다.
+> 다른 이름으로 만드셨다면 위 4번 체크리스트의 명령으로 주소를 바꿔주세요.
 
-1. Cloudflare 대시보드 → Workers & Pages → Create → Pages
-2. GitHub 저장소 연결
-3. 설정:
-   - Build command: **(비워둠)**
-   - Build output directory: **(비워둠 = 루트)**
-4. Deploy
+### 그 뒤로는
 
-### Netlify
+```bash
+git add -A
+git commit -m "수정 내용"
+git push
+```
 
-1. netlify.com → Add new site → Import an existing project
-2. 설정:
-   - Build command: **(비워둠)**
-   - Publish directory: **(비워둠 = 루트)**
+push 하면 Cloudflare가 알아서 다시 배포합니다. 따로 할 일이 없습니다.
+배포 상황은 Cloudflare 대시보드의 **Deployments** 탭에서 볼 수 있습니다.
 
-> 폴더를 통째로 netlify.com/drop 에 끌어다 놓기만 해도 바로 배포됩니다.
+### 설정 파일 `_headers`
 
-### Vercel
+브라우저가 파일을 얼마나 오래 보관할지 정하는 파일입니다.
+페이지(HTML)는 매번 새로 확인하고, 디자인·동작 파일은 1시간 보관합니다.
+급하게 반영해야 할 때는 HTML의 `?v=` 값을 올리세요 (위 3-0 참고).
 
-1. vercel.com → Add New → Project
-2. Framework Preset: **Other**
-3. Root Directory: **(기본값 그대로)**
+### 실제 도메인 연결 (나중에)
 
-### 도메인 연결 후
+1. 도메인 구입 (Cloudflare Registrar, 가비아, 후이즈 등)
+2. Cloudflare Pages 프로젝트 → **Custom domains** → **Set up a domain**
+3. 안내대로 DNS 설정 → HTTPS는 자동 적용
+4. **위 4번 체크리스트의 명령으로 코드 안 주소도 함께 교체**
+5. [Google Search Console](https://search.google.com/search-console) 에 `sitemap.xml` 등록
 
-- 배포 주소가 정해지면 **위 4번 체크리스트의 "도메인 주소 교체"** 를 잊지 마세요.
-- Google Search Console 에 `sitemap.xml` 을 등록하면 검색 노출이 빨라집니다.
-- HTTPS 는 위 서비스 모두 무료로 자동 적용됩니다.
+### 다른 서비스를 쓰고 싶다면
 
----
+정적 사이트라 어디에 올려도 동일하게 동작합니다.
+Netlify는 `_headers` 파일을 그대로 인식하고, GitHub Pages는 저장소 Settings → Pages 에서
+`main` / `/ (root)` 를 고르면 됩니다.
+단 GitHub Pages는 `kidmildo.github.io/houber_site/` 처럼 하위 경로로 배포되므로,
+`404.html` 안의 `/` 로 시작하는 링크를 함께 고쳐야 합니다.
 
 ## 6. 브라우저 지원
 
