@@ -17,117 +17,117 @@
 
   <!-- 한국어 메인 -->
   <url>
-    <loc>https://houber-site.pages.dev/</loc>
+    <loc>https://houber-site.w8st5tywbc.workers.dev/</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://houber-site.pages.dev/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://houber-site.pages.dev/ja/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://houber-site.pages.dev/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://houber-site.w8st5tywbc.workers.dev/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://houber-site.w8st5tywbc.workers.dev/ja/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://houber-site.w8st5tywbc.workers.dev/"/>
   </url>
 
   <!-- 일본어 메인 -->
   <url>
-    <loc>https://houber-site.pages.dev/ja/</loc>
+    <loc>https://houber-site.w8st5tywbc.workers.dev/ja/</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://houber-site.pages.dev/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://houber-site.pages.dev/ja/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://houber-site.pages.dev/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://houber-site.w8st5tywbc.workers.dev/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://houber-site.w8st5tywbc.workers.dev/ja/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://houber-site.w8st5tywbc.workers.dev/"/>
   </url>
 
 
   <!-- 사업 상세 페이지 (한국어 / 일본어 쌍) -->
   <url>
-    <loc>https://houber-site.pages.dev/business/houber.html</loc>
+    <loc>https://houber-site.w8st5tywbc.workers.dev/business/houber.html</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://houber-site.pages.dev/business/houber.html"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://houber-site.pages.dev/ja/business/houber.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://houber-site.pages.dev/business/houber.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://houber-site.w8st5tywbc.workers.dev/business/houber.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://houber-site.w8st5tywbc.workers.dev/ja/business/houber.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://houber-site.w8st5tywbc.workers.dev/business/houber.html"/>
   </url>
   <url>
-    <loc>https://houber-site.pages.dev/ja/business/houber.html</loc>
+    <loc>https://houber-site.w8st5tywbc.workers.dev/ja/business/houber.html</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://houber-site.pages.dev/business/houber.html"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://houber-site.pages.dev/ja/business/houber.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://houber-site.pages.dev/business/houber.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://houber-site.w8st5tywbc.workers.dev/business/houber.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://houber-site.w8st5tywbc.workers.dev/ja/business/houber.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://houber-site.w8st5tywbc.workers.dev/business/houber.html"/>
   </url>
   <url>
-    <loc>https://houber-site.pages.dev/business/nubi.html</loc>
+    <loc>https://houber-site.w8st5tywbc.workers.dev/business/nubi.html</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://houber-site.pages.dev/business/nubi.html"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://houber-site.pages.dev/ja/business/nubi.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://houber-site.pages.dev/business/nubi.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://houber-site.w8st5tywbc.workers.dev/business/nubi.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://houber-site.w8st5tywbc.workers.dev/ja/business/nubi.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://houber-site.w8st5tywbc.workers.dev/business/nubi.html"/>
   </url>
   <url>
-    <loc>https://houber-site.pages.dev/ja/business/nubi.html</loc>
+    <loc>https://houber-site.w8st5tywbc.workers.dev/ja/business/nubi.html</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://houber-site.pages.dev/business/nubi.html"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://houber-site.pages.dev/ja/business/nubi.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://houber-site.pages.dev/business/nubi.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://houber-site.w8st5tywbc.workers.dev/business/nubi.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://houber-site.w8st5tywbc.workers.dev/ja/business/nubi.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://houber-site.w8st5tywbc.workers.dev/business/nubi.html"/>
   </url>
   <url>
-    <loc>https://houber-site.pages.dev/business/startup.html</loc>
+    <loc>https://houber-site.w8st5tywbc.workers.dev/business/startup.html</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://houber-site.pages.dev/business/startup.html"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://houber-site.pages.dev/ja/business/startup.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://houber-site.pages.dev/business/startup.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://houber-site.w8st5tywbc.workers.dev/business/startup.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://houber-site.w8st5tywbc.workers.dev/ja/business/startup.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://houber-site.w8st5tywbc.workers.dev/business/startup.html"/>
   </url>
   <url>
-    <loc>https://houber-site.pages.dev/ja/business/startup.html</loc>
+    <loc>https://houber-site.w8st5tywbc.workers.dev/ja/business/startup.html</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://houber-site.pages.dev/business/startup.html"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://houber-site.pages.dev/ja/business/startup.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://houber-site.pages.dev/business/startup.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://houber-site.w8st5tywbc.workers.dev/business/startup.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://houber-site.w8st5tywbc.workers.dev/ja/business/startup.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://houber-site.w8st5tywbc.workers.dev/business/startup.html"/>
   </url>
   <url>
-    <loc>https://houber-site.pages.dev/business/legal.html</loc>
+    <loc>https://houber-site.w8st5tywbc.workers.dev/business/legal.html</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://houber-site.pages.dev/business/legal.html"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://houber-site.pages.dev/ja/business/legal.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://houber-site.pages.dev/business/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://houber-site.w8st5tywbc.workers.dev/business/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://houber-site.w8st5tywbc.workers.dev/ja/business/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://houber-site.w8st5tywbc.workers.dev/business/legal.html"/>
   </url>
   <url>
-    <loc>https://houber-site.pages.dev/ja/business/legal.html</loc>
+    <loc>https://houber-site.w8st5tywbc.workers.dev/ja/business/legal.html</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://houber-site.pages.dev/business/legal.html"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://houber-site.pages.dev/ja/business/legal.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://houber-site.pages.dev/business/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://houber-site.w8st5tywbc.workers.dev/business/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://houber-site.w8st5tywbc.workers.dev/ja/business/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://houber-site.w8st5tywbc.workers.dev/business/legal.html"/>
   </url>
   <url>
-    <loc>https://houber-site.pages.dev/business/it.html</loc>
+    <loc>https://houber-site.w8st5tywbc.workers.dev/business/it.html</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://houber-site.pages.dev/business/it.html"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://houber-site.pages.dev/ja/business/it.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://houber-site.pages.dev/business/it.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://houber-site.w8st5tywbc.workers.dev/business/it.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://houber-site.w8st5tywbc.workers.dev/ja/business/it.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://houber-site.w8st5tywbc.workers.dev/business/it.html"/>
   </url>
   <url>
-    <loc>https://houber-site.pages.dev/ja/business/it.html</loc>
+    <loc>https://houber-site.w8st5tywbc.workers.dev/ja/business/it.html</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://houber-site.pages.dev/business/it.html"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://houber-site.pages.dev/ja/business/it.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://houber-site.pages.dev/business/it.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://houber-site.w8st5tywbc.workers.dev/business/it.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://houber-site.w8st5tywbc.workers.dev/ja/business/it.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://houber-site.w8st5tywbc.workers.dev/business/it.html"/>
   </url>
 
 </urlset>

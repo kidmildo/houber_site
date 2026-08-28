@@ -272,7 +272,7 @@ HTML 파일 안에서 `[수정]` 이라고 적힌 주석을 찾으면 됩니다.
       > 한 곳만 고치면 값이 어긋나므로 반드시 전부 함께 갱신하세요.
 
 - [~] **4. 도메인 주소 교체**  ← 임시 주소 적용 완료, 실제 도메인 구입 후 재교체
-      현재는 Cloudflare Pages 기본 주소 `https://houber-site.pages.dev` 가
+      현재는 Cloudflare Pages 기본 주소 `https://houber-site.w8st5tywbc.workers.dev` 가
       아래 파일들에 들어가 있습니다.
       - `index.html` / `ja/index.html` (canonical, hreflang, og:url)
       - `business/*.html` / `ja/business/*.html` (10장, 동일)
@@ -281,8 +281,8 @@ HTML 파일 안에서 `[수정]` 이라고 적힌 주석을 찾으면 됩니다.
 
       실제 도메인을 구입하면 아래 한 줄로 전부 바꿉니다 (macOS).
       ```bash
-      grep -rl "houber-site.pages.dev" . --include="*.html" --include="*.xml" --include="*.txt" \
-        | xargs sed -i '' 's|houber-site.pages.dev|새도메인.com|g'
+      grep -rl "houber-site.w8st5tywbc.workers.dev" . --include="*.html" --include="*.xml" --include="*.txt" \
+        | xargs sed -i '' 's|houber-site.w8st5tywbc.workers.dev|새도메인.com|g'
       ```
       > ⚠️ `property@aders-international.com` 은 **메일 주소**이므로 건드리면 안 됩니다.
       > 위 명령은 `pages.dev` 만 골라 바꾸므로 메일 주소는 그대로 남습니다.
@@ -308,7 +308,8 @@ HTML 파일 안에서 `[수정]` 이라고 적힌 주석을 찾으면 됩니다.
 
 ## 5. 배포 방법
 
-**현재 배포처: Cloudflare Pages**
+**현재 배포처: Cloudflare Workers (정적 자산)**
+**사이트 주소: https://houber-site.w8st5tywbc.workers.dev**
 `main` 브랜치에 push 하면 1~2분 뒤 자동으로 사이트에 반영됩니다.
 빌드 도구가 없으므로 빌드 명령어도, 출력 폴더 지정도 필요 없습니다.
 

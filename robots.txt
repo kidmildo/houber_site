@@ -7,4 +7,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://houber-site.pages.dev/sitemap.xml
+Sitemap: https://houber-site.w8st5tywbc.workers.dev/sitemap.xml

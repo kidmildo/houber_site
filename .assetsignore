@@ -18,6 +18,10 @@
 README.md
 wrangler.jsonc
 
+# wrangler 가 배포 중에 만드는 임시 파일
+.wrangler
+.wrangler/**
+
 # 편집기·OS가 만드는 파일
 .DS_Store
 .vscode
