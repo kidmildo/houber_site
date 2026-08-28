@@ -505,10 +505,9 @@
 
   <!-- ========================================================================
        06. 문의하기
-       [수정] 카카오톡·LINE 상담 링크는 아직 비어 있습니다(href="#").
-              실제 채널 주소를 넣어주세요.
-              예) 카카오톡 오픈채팅: https://open.kakao.com/o/...
-                  LINE 공식계정  : https://line.me/R/ti/p/...
+       [수정] 카카오톡 채널: https://pf.kakao.com/_qTEPj
+              채널이 바뀌면 아래 "카카오톡 상담" 버튼의 href 만 고치면 됩니다.
+              (일본어 페이지 ja/index.html 도 같은 주소를 씁니다)
        ======================================================================== -->
   <section class="section" id="contact">
     <div class="section__inner">
@@ -530,8 +529,11 @@
           이메일로 문의하기 <span class="btn__arrow">&rarr;</span>
         </a>
 
-        <a class="btn" href="#">카카오톡 상담 <span class="btn__tag">KAKAO</span></a>
-        <a class="btn" href="#">LINE 상담 <span class="btn__tag">LINE</span></a>
+        <!-- 외부 링크이므로 새 창으로 열고, 보안상 rel="noopener" 를 붙입니다. -->
+        <a class="btn" href="https://pf.kakao.com/_qTEPj" target="_blank" rel="noopener">
+          카카오톡 상담 <span class="btn__tag">KAKAO</span>
+          <span class="visually-hidden">(새 창에서 열림)</span>
+        </a>
 
         <!-- tel: 링크는 모바일에서 누르면 바로 전화가 걸립니다 -->
         <a class="btn" href="tel:+81666550328">06-6655-0328 <span class="btn__tag">부동산</span></a>
