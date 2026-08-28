@@ -36,6 +36,8 @@
 │       └── README.md       ← 사진 넣는 방법 안내
 ├── favicon.svg             ← 브라우저 탭 아이콘
 ├── 404.html                ← 없는 페이지에 접속했을 때 화면
+├── wrangler.jsonc          ← 배포 설정 (Cloudflare)
+├── .assetsignore           ← 사이트에 올리지 않을 파일
 ├── _headers                ← 배포 설정 (브라우저 보관 기간)
 ├── robots.txt              ← 검색엔진 안내
 ├── sitemap.xml             ← 검색엔진용 페이지 목록
@@ -313,23 +315,21 @@ HTML 파일 안에서 `[수정]` 이라고 적힌 주석을 찾으면 됩니다.
 ### 처음 한 번만 하는 설정
 
 1. [dash.cloudflare.com](https://dash.cloudflare.com) 가입 (무료)
-2. 왼쪽 메뉴 **Workers & Pages** → **Create** → **Pages** 탭 → **Connect to Git**
-3. GitHub 계정을 연결하고 `kidmildo/houber_site` 저장소를 선택
-4. 설정 화면에서:
+2. 왼쪽 **Compute** → **Workers & Pages** → **Create**
+3. **Import a repository** 로 `kidmildo/houber_site` 선택
+4. 설정 화면:
 
    | 항목 | 값 |
    | --- | --- |
-   | Project name | **`houber-site`** ← 이 이름이 주소가 됩니다 |
-   | Production branch | `main` |
-   | Framework preset | **None** |
+   | Project name | **`houber-site`** |
    | Build command | **(비워둠)** |
-   | Build output directory | **(비워둠)** |
+   | Deploy command | `npx wrangler deploy` (기본값 그대로) |
 
-5. **Save and Deploy** → 1~2분 뒤 `https://houber-site.pages.dev` 에서 확인
+5. **Deploy** → 1~2분 뒤 주소가 발급됩니다
 
-> ⚠️ **Project name 은 반드시 `houber-site` 로** 해주세요.
-> 코드 안의 사이트 주소(canonical·sitemap 등)가 이 이름에 맞춰져 있습니다.
-> 다른 이름으로 만드셨다면 위 4번 체크리스트의 명령으로 주소를 바꿔주세요.
+> Cloudflare가 대시보드를 개편하면서 `Pages` 대신 `Workers` 흐름으로 안내합니다.
+> 둘 다 정적 사이트를 똑같이 서빙하며, 이 저장소는 `wrangler.jsonc` 설정으로
+> **빌드 없이 폴더를 그대로 올리는** 방식을 씁니다.
 
 ### 그 뒤로는
 
